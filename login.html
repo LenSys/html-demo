@@ -19,11 +19,26 @@
         <form action="./login.html">
             <div>
                 <label for="username">Email</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" required />
             </div>
             <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" />
+                <input type="password" name="password" id="password" required />
+            </div>
+            <div>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" id="confirm-password" required />
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" />
+            </div>
+            <div>
+                <label for="birthday">Birthday</label>
+                <input type="date" name="birthday" id="birthday" />
+            </div>
+            <div>
+                <textarea rows="5" cols="50"></textarea>
             </div>
             <div>
                 <input type="submit" value="Login">
