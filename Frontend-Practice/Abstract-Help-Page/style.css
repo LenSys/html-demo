@@ -524,6 +524,66 @@ h3.subsection-tree-title {
 
 
 /*******************************************************/
+/* Article                                             */
+/*******************************************************/
+
+.article-page {
+    position: relative;
+}
+
+.article-page__container {
+
+}
+
+.js--content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 66.66666%;
+}
+
+.article {
+    position: relative;
+  }
+
+.article__body .wysiwyg-indent2,.article__body .wysiwyg-indent3,.article__body .wysiwyg-indent4 {
+    position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2rem auto;
+  z-index: 1;
+  border-radius: 8px;
+  padding-left:50px;
+    padding-top:1rem;
+    padding-right:1rem;
+  padding-bottom: 1.25rem;
+}
+
+.article__body h2 {
+    font-family: "GT America Standard";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+}
+
+.article__body a {
+    color: black;
+}
+
+.article__body .wysiwyg-indent4 {
+    background: #FFE496;
+}
+
+.article__body .wysiwyg-indent4::before {
+    background-image: url("https://theme.zdassets.com/theme_assets/2197739/09bb6f54527feb49b69da83a0fff6cdaff399ba6.png");
+    width: 13.5px;
+    height: 13.5px;
+    background-size: 13.5px;
+}
+
+
+/*******************************************************/
 /* Footer                                              */
 /*******************************************************/
 .footer {
