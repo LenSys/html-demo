@@ -883,6 +883,108 @@ height: 100%;
 
 
 /*******************************************************/
+/* Blog                                                */
+/*******************************************************/
+.blog-entries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1132px;
+    margin: auto;
+}
+
+.blog-card:hover {
+    transform: scale3d(1.01,1.01,1.01);
+}
+
+.blog-card, .blog-card:hover {
+    box-shadow: 0 100px 140px -50px rgba(0,0,0,.25),0 0 20px 0 rgba(0,0,0,.03);
+}
+
+.blog-card {
+    position: relative;
+    width: 518px;
+    margin: 24px 24px 82px;
+    border-radius: 24px;
+    background-color: #fff;
+    overflow: hidden;
+    display: block;
+    color: #333;
+    transition: .4s ease;
+}
+
+.blog-card-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.66%;
+    overflow: hidden;
+}
+
+
+.blog-card-image-container .blog-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eef0f2;
+    overflow: hidden;
+}
+
+.blog-card-image-container .blog-card-image img {
+    height: 100%;
+    min-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.blog {
+    padding: 80px 0 100px;
+}
+
+.blog .section-text {
+    font-size: 26px;
+    max-width: 700px;
+}
+
+.blog a {
+    color: black;
+    text-decoration: none;
+}
+
+.blog a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.blog-card-content {
+    padding: 30px 36px 40px;
+}
+
+.blog-card-title {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.63;
+    margin-bottom: 8px;
+}
+
+.blog-card-text {
+    font-size: 22px;
+    line-height: 1.67;
+    margin-bottom: 50px;
+}
+
+.blog-card-footer {
+    font-size: 20px;
+    font-weight: 500;
+    color: #989898;
+}
+
+
+/*******************************************************/
 /* Footer                                              */
 /*******************************************************/
 .footer {
