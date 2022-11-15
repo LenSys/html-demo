@@ -197,7 +197,8 @@ body {
     width: 100%;
 }
 
-.section-content-center {
+.section-content-center,
+.section-content--center {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -823,14 +824,68 @@ height: 100%;
 }
 
 
+/*******************************************************/
+/* Examples                                            */
+/*******************************************************/
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1132px;
+}
+
+
+.example {
+    width: 518px;
+    border-radius: 24px;
+    margin: 24px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 100px 140px -50px rgba(0,0,0,.25),0 0 20px 0 rgba(0,0,0,.03);
+    cursor: default;
+}
+
+.example-image {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    padding-top: 67.86%;
+}
+
+
+.example-image img, .example-image video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eef0f2;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.example-content {
+    padding: 32px;
+}
+
+.example-text, .example-title {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.example-text {
+    line-height: 1.5;
+}
+
+.example-text, .example-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
 
 /*******************************************************/
 /* Footer                                              */
 /*******************************************************/
 .footer {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     padding: 0 64px 64px;
     background: #fff;
     font-family: LabGrotesque,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -840,17 +895,11 @@ height: 100%;
 .footer-content {
     border-top: .5px solid rgba(0,0,0,.2);
     background-color: #fff;
-    /* flex: 1 1;
-    display: flex;
-    justify-content: space-between; */
     max-width: 1072px;
     padding: 60px 80px;
 }
 
 .footer-column {
-    /* flex-basis: 0;
-    display: flex;
-    flex-direction: column; */
     padding: 0 16px;
 }
 
