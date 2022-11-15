@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobe | Machine Learning made easy</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container-fluid header-container">
+        <div class="header">
+            <nav class="navbar navbar-expand-lg fixed-top" aria-label="Eleventh navbar example">
+                <div class="container-fluid">
+                    <a href="index.html" class="header-logo abstract d-flex align-items-center mb-2 mb-lg-0 text-decoration-none ps-3">
+                        <svg width="196px" height="52px" viewBox="0 0 196 52" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><path d="M14.7318403,-3.55271368e-15 L23.7444592,-3.13837756e-15 C27.3105342,-3.7934549e-15 28.6036791,0.371302445 29.9073828,1.06853082 C31.2110865,1.76575919 32.2342408,2.78891348 32.9314692,4.09261719 C33.6286976,5.39632089 34,6.68946584 34,10.2555408 L34,23.7444592 C34,27.3105342 33.6286976,28.6036791 32.9314692,29.9073828 C32.2342408,31.2110865 31.2110865,32.2342408 29.9073828,32.9314692 C28.6036791,33.6286976 27.3105342,34 23.7444592,34 L10.2555408,34 C6.68946584,34 5.39632089,33.6286976 4.09261719,32.9314692 C2.78891348,32.2342408 1.76575919,31.2110865 1.06853082,29.9073828 C0.371302445,28.6036791 -1.02954229e-16,27.3105342 1.77192988e-16,23.7444592 L0,15.0409072 L0,15.0409072 L14.7318403,-3.55271368e-15 Z" id="header-logo-path-1"></path><path d="M10.2555408,-3.9670498e-15 L23.7444592,-3.13837756e-15 C27.3105342,-3.7934549e-15 28.6036791,0.371302445 29.9073828,1.06853082 C31.2110865,1.76575919 32.2342408,2.78891348 32.9314692,4.09261719 C33.6286976,5.39632089 34,6.68946584 34,10.2555408 L34,19 L34,19 L19.5,34 L10.2555408,34 C6.68946584,34 5.39632089,33.6286976 4.09261719,32.9314692 C2.78891348,32.2342408 1.76575919,31.2110865 1.06853082,29.9073828 C0.371302445,28.6036791 1.60494146e-16,27.3105342 -2.76224082e-16,23.7444592 L2.76224082e-16,10.2555408 C-1.60494146e-16,6.68946584 0.371302445,5.39632089 1.06853082,4.09261719 C1.76575919,2.78891348 2.78891348,1.76575919 4.09261719,1.06853082 C5.39632089,0.371302445 6.68946584,-3.31197246e-15 10.2555408,-3.9670498e-15 Z" id="header-logo-path-3"></path><path d="M33.999,18 L34,23.7444592 C34,27.3105342 33.6286976,28.6036791 32.9314692,29.9073828 C32.2342408,31.2110865 31.2110865,32.2342408 29.9073828,32.9314692 C28.6036791,33.6286976 27.3105342,34 23.7444592,34 L18,34 L18,28.2555408 C18,24.6894658 18.3713024,23.3963209 19.0685308,22.0926172 C19.7657592,20.7889135 20.7889135,19.7657592 22.0926172,19.0685308 C23.3963209,18.3713024 24.6894658,18 28.2555408,18 L33.999,18 Z" id="header-logo-path-5"></path></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><path d="M9.13638752,50.1738853 L9.13638752,0.275153484 L-4.54747351e-13,0.275153484 L-4.54747351e-13,50.1738853 L9.13638752,50.1738853 Z M32.6507879,51.2983638 C43.4738931,51.2983638 51.2749625,43.5675744 51.2749625,32.1822299 C51.2749625,20.7968855 43.4738931,13.066096 32.6507879,13.066096 C21.7574028,13.066096 13.9563335,20.7968855 13.9563335,32.1822299 C13.9563335,43.5675744 21.7574028,51.2983638 32.6507879,51.2983638 Z M32.6507879,43.5675744 C26.9581157,43.5675744 23.2332808,39.1399404 23.2332808,32.1822299 C23.2332808,25.3650792 26.9581157,20.7968855 32.6507879,20.7968855 C38.2731802,20.7968855 41.9980152,25.3650792 41.9980152,32.1822299 C41.9980152,39.1399404 38.2731802,43.5675744 32.6507879,43.5675744 Z M75.8435614,51.157804 C84.979949,51.157804 91.7970997,43.7081342 91.7970997,32.1822299 C91.7970997,20.7968855 85.1205088,13.2066558 75.9138414,13.2066558 C71.2753677,13.2066558 67.6910926,14.8230936 65.0907361,18.0559692 L65.0907361,0.275153484 L55.9543486,0.275153484 L55.9543486,50.1738853 L64.458217,50.1738853 L64.458217,45.6056916 C66.9882935,49.3305265 70.7834084,51.157804 75.8435614,51.157804 Z M73.7351643,43.2161748 C68.4641715,43.2161748 64.7393366,38.9993806 64.7393366,32.1822299 C64.7393366,25.4353591 68.4641715,21.0780051 73.8054442,21.0780051 C79.1467169,21.0780051 82.5201523,25.4353591 82.5201523,32.1822299 C82.5201523,38.9291007 79.0061571,43.2161748 73.7351643,43.2161748 Z M113.976182,51.2983638 C120.090534,51.2983638 124.939847,49.4008064 130,44.2703734 L124.869567,38.6479811 C122.62061,40.5455385 120.793333,41.8105768 119.317455,42.5133758 C117.911857,43.2161748 116.225139,43.5675744 114.187022,43.5675744 C108.21323,43.5675744 104.910074,40.1238591 104.066715,34.5717466 L129.85944,34.5717466 C129.92972,33.5175481 130,32.3227897 130,30.9874715 C130,19.7426869 123.955928,13.066096 113.203103,13.066096 C102.028598,13.066096 95.1411676,21.2185649 95.1411676,32.3930696 C95.1411676,43.848694 102.379998,51.2983638 113.976182,51.2983638 Z M121.074452,28.0357156 L104.277555,28.0357156 C105.331754,23.1864022 108.21323,20.2346462 112.921983,20.2346462 C117.771297,20.2346462 120.723053,23.1864022 121.074452,28.0357156 Z" fill-opacity="0.80345826" fill="#000000" fill-rule="nonzero"></path><g transform="translate(144.000000, 0.000000)"><g transform="translate(18.000000, 18.000000)"><mask fill="white"><use xlink:href="#header-logo-path-1"></use></mask><use fill="#F34747" fill-rule="nonzero" transform="translate(17.000000, 17.000000) rotate(-360.000000) translate(-17.000000, -17.000000) " xlink:href="#header-logo-path-1"></use></g><g><mask fill="white"><use xlink:href="#header-logo-path-3"></use></mask><use fill="#00DDB3" fill-rule="nonzero" transform="translate(17.000000, 17.000000) rotate(-360.000000) translate(-17.000000, -17.000000) " xlink:href="#header-logo-path-3"></use></g><mask fill="white"><use xlink:href="#header-logo-path-5"></use></mask><use fill="#333333" fill-rule="nonzero" xlink:href="#header-logo-path-5"></use></g></g></g></svg>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            
+                    <div class="collapse navbar-collapse justify-content-md-center" id="navbarCollapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" title="Overview">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" title="Overview">Examples</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" title="Overview">Tour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" title="Overview">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" title="Overview">Help</a>
+                            </li>
+                        </ul>
+                        <div class="header-right">
+                            <button class="header-download-button header-download-button--green">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main role="main">
+        <div class="container-fluid overflow-hidden">
+            <section class="hero hero-container--desktop row">
+                <div class="hero-left col-md-6">
+                    <h1 class="section-heading">
+                        <span class="hero-train-text">Train apps to</span>
+                        <br>
+                        <div class="section-heading--green" style="opacity: 1; transform: scale(1);">see gestures</div>
+                    </h1>
+                    <p class="section-text">
+                        <span class="hero-text--mobile">Create machine learning models with a free, easy to use tool.</span>
+                        <span class="hero-text--desktop">Lobe helps you train machine learning models with a free, easy to use tool.</span>
+                    </p>
+                    <div class="hero-buttons row">
+                        <button class="large-download-button col-6">Download</button>
+                        <button class="large-download-button col-6 large-download-button--outline">
+                            Watch Tour<svg width="39px" height="39px" viewBox="0 0 39 39" version="1.1"><title>Watch Tour</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-362.000000, -12.000000)" fill-rule="nonzero"><g transform="translate(232.000000, 12.000000)"><g transform="translate(130.000000, 0.000000)"><circle stroke="#00E1B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="19.5" cy="19.5" r="11.5"></circle><path d="M17.4902612,14.8382719 L24.2283102,18.6284245 C24.709668,18.8991883 24.8803883,19.5089034 24.6096245,19.9902612 C24.5198357,20.1498857 24.3879346,20.2817868 24.2283102,20.3715755 L17.4902612,24.1617281 C17.0089034,24.4324919 16.3991883,24.2617716 16.1284245,23.7804138 C16.0442285,23.6307321 16,23.4618894 16,23.2901525 L16,15.7098475 C16,15.1575627 16.4477153,14.7098475 17,14.7098475 C17.1717369,14.7098475 17.3405796,14.754076 17.4902612,14.8382719 Z" fill="#00E1B1"></path></g></g></g></g></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-right col-md-6">
+                    <div class="hero-video-container">
+                        <video class="hero-video" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video showing examples of ways to use Lobe to easily create machine learning models." style="visibility: visible;" controls="">
+                            <source src="https://www.lobe.ai/assets/hero/Home.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="hero-arrow" style="opacity: 1;"><svg width="58px" height="24px" viewBox="0 0 58 24" version="1.1"><title>See More</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.300000012" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(-771.000000, -986.000000)" stroke="#000000" stroke-width="3"><g transform="translate(771.000000, 986.000000)"><polyline id="download-arrow" points="8 8 29 16 50 8"></polyline></g></g></g></svg></div>
+            </section>
+            <section class="section section--made-simple section--dark">
+                <div class="section-content">
+                    <h2 class="section-heading">Machine learning <br> made <span class="section-heading--green">easy</span></h2>
+                    <p class="section-text">Lobe has everything you need to bring your machine learning ideas to life. Just show it examples of what you want it to learn, and it automatically trains a custom machine learning model that can be shipped in your app.</p>
+                    <p class="section-text section-text--short">Lobe has everything you need to bring your machine learning ideas to life. Just show it examples of what you want it to learn, and it automatically trains a custom machine learning model that can be shipped in your app.</p>
+                </div>
+                <div class="section-image-container">
+                    <img src="https://www.lobe.ai/assets/screenshot/screenshot.jpg" class="section-image section-image--mobile" alt="Screenshot of the Lobe app showcasing a machine learning dataset called California Plants." height="900" width="1360" loading="lazy">
+                    <img src="https://www.lobe.ai/assets/screenshot/screenshot@2x.jpg" class="section-image section-image--desktop" alt="Screenshot of the Lobe app showcasing a machine learning dataset called California Plants." height="1800" width="2720" loading="lazy">
+                </div>
+                <div class="section-content">
+                    <div class="features-container">
+                        <div class="row tip-cards tip-cards--features">
+                            <div class="col-4 tip-card">
+                                <div class="tip-card-header">
+                                    <div class="tip-card-icon-container">
+                                        <img src="https://www.lobe.ai/assets/features/Easy.jpg" class="tip-card-video tip-card-video--icon" alt="Animated lightbulb icon indicating how easy it is to start training machine learning models with Lobe." loading="lazy">
+                                        <video class="tip-card-video tip-card-video--icon" playsinline="" webkit-playsinline="true" preload="none" title="Animated lightbulb icon indicating how easy it is to start training machine learning models with Lobe." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/features/Easy.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="tip-card-content">
+                                    <div class="tip-card-title">Easy to Use</div>
+                                    <div class="tip-card-text">Designed to be easy enough for anyone to use. No code or experience required.</div>
+                                </div>
+                            </div>
+                            <div class="col-4 tip-card">
+                                <div class="tip-card-header">
+                                    <div class="tip-card-icon-container">
+                                        <img src="https://www.lobe.ai/assets/features/Private.jpg" class="tip-card-video tip-card-video--icon" alt="Animated lock icon indicating that Lobe is a safe, secure, and private way to train machine learning models." loading="lazy">
+                                        <video class="tip-card-video tip-card-video--icon" playsinline="" webkit-playsinline="true" preload="none" title="Animated lock icon indicating that Lobe is a safe, secure, and private way to train machine learning models." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/features/Private.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="tip-card-content">
+                                    <div class="tip-card-title">Free and Private</div>
+                                    <div class="tip-card-text">Train for free on your own computer without uploading your data to the cloud.</div>
+                                </div>
+                            </div>
+                            <div class="col-4 tip-card">
+                                <div class="tip-card-header">
+                                    <div class="tip-card-icon-container">
+                                        <img src="https://www.lobe.ai/assets/features/Anywhere.jpg" class="tip-card-video tip-card-video--icon" alt="Animated ship icon indicating that machine learning models created with Lobe can be exported and shipped on any platform." loading="lazy">
+                                        <video class="tip-card-video tip-card-video--icon" playsinline="" webkit-playsinline="true" preload="none" title="Animated ship icon indicating that machine learning models created with Lobe can be exported and shipped on any platform." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/features/Anywhere.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="tip-card-content">
+                                    <div class="tip-card-title">Export Anywhere</div>
+                                    <div class="tip-card-text">Available for Mac and Windows. Export your model and ship it on any platform you choose.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="made-simple-models">
+                        <h3 class="header-2"><span class="section-heading--green">Project</span> Templates</h3>
+                        <p class="section-text">Lobe will automatically select the right machine learning architecture for your project. Image classification is available now, with more templates coming soon.</p>
+                    </div>
+                </div>
+                <div class="section-content model-cards-container container-fluid">
+                    <div class="row tip-cards tip-cards--white">
+                        <div class="col-4 tip-card tip-card--white">
+                            <div class="tip-card-header">
+                                <div class="tip-card-icon-container">
+                                    <img src="https://www.lobe.ai/assets/modelTypes/Classification.jpg" class="tip-card-video " alt="Animated icon depicting image classification with Lobe using deep learning." loading="lazy">
+                                    <video class="tip-card-video " playsinline="" webkit-playsinline="true" preload="none" title="Animated icon depicting image classification with Lobe using deep learning." style="visibility: visible;">
+                                        <source src="https://www.lobe.ai/assets/modelTypes/Classification.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="tip-card-content">
+                                <div class="tip-card-title">Image Classification</div>
+                                <div class="tip-card-text">Label an image based on its content.</div>
+                            </div>
+                            <div class="tip-card-availability">Available Now</div>
+                        </div>
+                        <div class="col-4 tip-card tip-card--white tip-card--inactive">
+                            <div class="tip-card-header">
+                                <div class="tip-card-icon-container">
+                                    <img src="https://www.lobe.ai/assets/modelTypes/Detection.jpg" class="tip-card-video " alt="Animated icon depicting object detection in images using deep learning with Lobe." loading="lazy">
+                                    <video class="tip-card-video " playsinline="" webkit-playsinline="true" preload="none" title="Animated icon depicting object detection in images using deep learning with Lobe." style="visibility: visible;">
+                                        <source src="https://www.lobe.ai/assets/modelTypes/Detection.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                                <div class="tip-card-content">
+                                    <div class="tip-card-title">Object Detection</div>
+                                    <div class="tip-card-text">Locate an object inside of an image.</div>
+                                </div>
+                            <div class="tip-card-availability">Coming Soon</div>
+                        </div>
+                        <div class="col-4 tip-card tip-card--white tip-card--inactive">
+                            <div class="tip-card-header">
+                                <div class="tip-card-icon-container">
+                                    <img src="https://www.lobe.ai/assets/modelTypes/Tabular.jpg" class="tip-card-video " alt="Animated icon depicting tabular problem types, where Lobe uses deep learning to understand data in tables and spreadsheets." loading="lazy">
+                                    <video class="tip-card-video " playsinline="" webkit-playsinline="true" preload="none" title="Animated icon depicting tabular problem types, where Lobe uses deep learning to understand data in tables and spreadsheets." style="visibility: visible;">
+                                        <source src="https://www.lobe.ai/assets/modelTypes/Tabular.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="tip-card-content">
+                                <div class="tip-card-title">Data Classification</div>
+                                <div class="tip-card-text">Label data in a table based on its content.</div>
+                            </div>
+                            <div class="tip-card-availability">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section ltp-overview">
+                <div class="section-content">
+                    <h2 class="section-heading">Label, Train, <span class="section-heading--green">Use</span></h2>
+                    <p class="section-text">Lobe simplifies the process of machine learning into three easy steps. Collect and label your images. Train your model and understand your results. Then play, improve, and export your model.</p>
+                </div>
+                <div class="label-your-images">
+                    <div class="section-spanning-video">
+                        <img src="https://www.lobe.ai/assets/steps/Label.jpg" class="ltp-video" alt="Quickly label images in Lobe by selecting an image, then typing or selecting a label." loading="lazy">
+                        <video class="ltp-video" playsinline="" webkit-playsinline="true" preload="none" title="Quickly label images in Lobe by selecting an image, then typing or selecting a label." style="visibility: visible;">
+                            <source src="https://www.lobe.ai/assets/steps/Label.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="section-content p-3">
+                        <div class="ltp-section-content">
+                            <h2 class="header-2"><span class="section-heading--green">Label</span> your images</h2>
+                            <p class="section-text">Collect bursts using your webcam, or drag in a folder of images from your computer. Then quickly label your images to create a machine learning dataset.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="train-your-model">
+                    <div class="section-spanning-video">
+                        <img src="https://www.lobe.ai/assets/steps/Train.jpg" class="ltp-video" alt="Once you've added and labeled images, Lobe will automatically start training and showing the predicted label for each image." loading="lazy">
+                        <video class="ltp-video" playsinline="" webkit-playsinline="true" preload="none" title="Once you've added and labeled images, Lobe will automatically start training and showing the predicted label for each image." style="visibility: visible;">
+                            <source src="https://www.lobe.ai/assets/steps/Train.mp4" type="video/mp4">
+                        </video>
+                        <img src="https://www.lobe.ai/assets/steps/Train Mobile.jpg" class="ltp-video-mobile" alt="Once you've added and labeled images, Lobe will automatically start training and showing the predicted label for each image." loading="lazy">
+                        <video class="ltp-video-mobile" playsinline="" webkit-playsinline="true" preload="none" title="Once you've added and labeled images, Lobe will automatically start training and showing the predicted label for each image." style="visibility: hidden;">
+                            <source src="https://www.lobe.ai/assets/steps/Train Mobile.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="section-content p-0">
+                        <div class="ltp-section-content">
+                            <h2 class="header-2"><span class="section-heading--green">Train</span> automatically</h2>
+                            <p class="section-text">Automatically train on your own computer without any setup or configuration. Understand the strengths and weaknesses of your model with live visual results.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="play-with-it">
+                    <div class="section-spanning-video">
+                        <img src="https://www.lobe.ai/assets/steps/Play.jpg" class="ltp-video" alt="Finally, you can add image to Lobe from your computer, or use your webcam to get predictions in real-time for images your model has never seen. Mark them correct or incorrect to add them to your dataset." loading="lazy">
+                        <video class="ltp-video" playsinline="" webkit-playsinline="true" preload="none" title="Finally, you can add image to Lobe from your computer, or use your webcam to get predictions in real-time for images your model has never seen. Mark them correct or incorrect to add them to your dataset." style="visibility: visible;">
+                            <source src="https://www.lobe.ai/assets/steps/Play.mp4" type="video/mp4">
+                        </video>
+                        <img src="https://www.lobe.ai/assets/steps/Play Mobile.jpg" class="ltp-video-mobile" alt="Finally, you can add image to Lobe from your computer, or use your webcam to get predictions in real-time for images your model has never seen. Mark them correct or incorrect to add them to your dataset." loading="lazy">
+                        <video class="ltp-video-mobile" playsinline="" webkit-playsinline="true" preload="none" title="Finally, you can add image to Lobe from your computer, or use your webcam to get predictions in real-time for images your model has never seen. Mark them correct or incorrect to add them to your dataset." style="visibility: hidden;">
+                            <source src="https://www.lobe.ai/assets/steps/Play Mobile.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="section-content">
+                        <div class="ltp-section-content">
+                            <h2 class="header-2"><span class="section-heading--green">Use</span> your model</h2>
+                            <p class="section-text">Use your model with your webcam or images from your computer. Improve your results by giving your model feedback on its predictions, then finally export it to your app.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section--dark">
+                <section class="section section--ship">
+                    <div class="section-content ship-content">
+                        <h2 class="section-heading"><span class="section-heading--green">Export</span> Anywhere</h2>
+                        <p class="section-text">When you are done, you can export your model to a variety of industry standard formats and ship it on any platform you choose.</p>
+                        <a href="https://www.lobe.ai/docs/export/export" target="_blank" class="ship-learn-button" rel="noopener">Learn More
+                            <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1">
+                                <title>chevron</title>
+                                <g id="Direction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                    <g id="Overview-Desktop" transform="translate(-567.000000, -8460.000000)" stroke="#04ddb2" stroke-width="3">
+                                        <g id="Bottom" transform="translate(-217.000000, 3973.000000)">
+                                            <g transform="translate(163.000000, 3926.000000)" id="Ship-it">
+                                                <g id="Text" transform="translate(247.000000, 206.000000)">
+                                                    <g id="Download" transform="translate(0.000000, 352.000000)">
+                                                        <g id="arrow" transform="translate(374.000000, 3.000000)">
+                                                            <polyline transform="translate(15.700000, 16.000000) rotate(-90.000000) translate(-15.700000, -16.000000) " points="9.2 13.5 15.7 18.5 22.2 13.5"></polyline>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="ship-bubbles-container ship-bubbles-container--desktop">
+                        <div class="ship-bubbles ship-bubbles--active">
+                            <div class="bubble-container" style="left: 1395px; top: 5px; transition-delay: 280ms;">
+                                <figure class="bubble" style="background-color: rgb(250, 202, 12);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNMTIgMTJoMTQuNzQ3djE0Ljc0N0gxMnptMCAxNy4yNTNoMTQuNzQ3VjQ0SDEyek0yOS4yNTMgMTJINDR2MTQuNzQ3SDI5LjI1M3ptMCAxNy4yNTNINDRWNDRIMjkuMjUzeiIvPjwvc3ZnPg==" alt="windows logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: -20px; top: 40px; transition-delay: 40ms;">
+                                <figure class="bubble" style="background-color: rgb(255, 153, 0);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NyIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Ik0xNy4zIDI3LjE4N2MwIC41NzYuMDYyIDEuMDQ0LjE3IDEuMzg2LjEyNS4zNDMuMjguNzE2LjQ5OCAxLjEyLjA3OC4xMjUuMTEuMjUuMTEuMzU4IDAgLjE1Ni0uMDkzLjMxMi0uMjk2LjQ2N2wtLjk4LjY1NGMtLjE0LjA5My0uMjguMTQtLjQwNS4xNC0uMTU2IDAtLjMxMi0uMDc4LS40NjctLjIxOGE0LjgyIDQuODIgMCAwIDEtLjU2MS0uNzMybC0uNDgzLS45MmMtMS4yMTUgMS40MzMtMi43NCAyLjE1LTQuNTggMi4xNS0xLjMwOCAwLTIuMzUyLS4zNzQtMy4xMTUtMS4xMnMtMS4xNTMtMS43NDQtMS4xNTMtM2MwLTEuMzI0LjQ2Ny0yLjQgMS40MTctMy4yMDhzMi4yMTItMS4yMTUgMy44MTYtMS4yMTVjLjUzIDAgMS4wNzUuMDQ3IDEuNjUuMTI1czEuMTY4LjIwMiAxLjc5LjM0M1YyMi4zOWMwLTEuMTg0LS4yNS0yLjAxLS43MzItMi40OTItLjQ5OC0uNDgzLTEuMzQtLjcxNi0yLjU0LS43MTYtLjU0NSAwLTEuMTA2LjA2Mi0xLjY4Mi4yMDJhMTIuNDEgMTIuNDEgMCAwIDAtMS42ODIuNTMgNC40NyA0LjQ3IDAgMCAxLS41NDUuMjAyYy0uMTEuMDMtLjE4Ny4wNDctLjI1LjA0Ny0uMjE4IDAtLjMyNy0uMTU2LS4zMjctLjQ4M3YtLjc2M2MwLS4yNS4wMy0uNDM2LjExLS41NDVzLjIxOC0uMjE4LjQzNi0uMzI3Yy41NDUtLjI4IDEuMi0uNTE0IDEuOTYyLS43Ljc2My0uMjAyIDEuNTczLS4yOTYgMi40My0uMjk2IDEuODUzIDAgMy4yMDguNDIgNC4wOCAxLjI2Mi44NTcuODQgMS4yOTMgMi4xMTggMS4yOTMgMy44M3Y1LjA0NmguMDN6bS02LjMyMyAyLjM2N2MuNTE0IDAgMS4wNDQtLjA5MyAxLjYwNC0uMjhzMS4wNi0uNTMgMS40OC0uOTk3Yy4yNS0uMjk2LjQzNi0uNjIzLjUzLS45OTdhNS41OSA1LjU5IDAgMCAwIC4xNTYtMS4zNTV2LS42NTRjLS40NTItLjExLS45MzUtLjIwMi0xLjQzMy0uMjY1cy0uOTgtLjA5My0xLjQ2NC0uMDkzYy0xLjA0NCAwLTEuODA3LjIwMi0yLjMyLjYyM3MtLjc2MyAxLjAxMi0uNzYzIDEuNzljMCAuNzMyLjE4NyAxLjI3Ny41NzYgMS42NS4zNzQuMzkuOTIuNTc2IDEuNjM1LjU3NnptMTIuNTA3IDEuNjgyYy0uMjggMC0uNDY3LS4wNDctLjU5Mi0uMTU2LS4xMjUtLjA5My0uMjM0LS4zMTItLjMyNy0uNjA3bC0zLjY2LTEyLjA0Yy0uMDkzLS4zMTItLjE0LS41MTQtLjE0LS42MjMgMC0uMjUuMTI1LS4zOS4zNzQtLjM5aDEuNTI2Yy4yOTYgMCAuNDk4LjA0Ny42MDcuMTU2LjEyNS4wOTMuMjE4LjMxMi4zMTIuNjA3bDIuNjE3IDEwLjMxIDIuNDMtMTAuMzFjLjA3OC0uMzEyLjE3LS41MTQuMjk2LS42MDdzLjM0My0uMTU2LjYyMy0uMTU2aDEuMjQ2Yy4yOTYgMCAuNDk4LjA0Ny42MjMuMTU2LjEyNS4wOTMuMjM0LjMxMi4yOTYuNjA3bDIuNDYgMTAuNDM1IDIuNjk0LTEwLjQzNWMuMDkzLS4zMTIuMjAyLS41MTQuMzEyLS42MDcuMTI1LS4wOTMuMzI3LS4xNTYuNjA3LS4xNTZoMS40NDhjLjI1IDAgLjM5LjEyNS4zOS4zOSAwIC4wNzgtLjAxNi4xNTYtLjAzLjI1cy0uMDQ3LjIxOC0uMTEuMzlsLTMuNzU0IDEyLjA0Yy0uMDkzLjMxMi0uMjAyLjUxNC0uMzI3LjYwN3MtLjMyNy4xNTYtLjU5Mi4xNTZoLTEuMzRjLS4yOTYgMC0uNDk4LS4wNDctLjYyMy0uMTU2cy0uMjM0LS4zMTItLjI5Ni0uNjIzTDI4LjE0IDIwLjQyN2wtMi40IDEwLjAzYy0uMDc4LjMxMi0uMTcuNTE0LS4yOTYuNjIzcy0uMzQzLjE1Ni0uNjIzLjE1NmgtMS4zNHptMjAuMDE0LjQyYy0uOCAwLTEuNjItLjA5My0yLjQtLjI4cy0xLjM4Ni0uMzktMS43OS0uNjIzYy0uMjUtLjE0LS40Mi0uMjk2LS40ODMtLjQzNmExLjEgMS4xIDAgMCAxLS4wOTMtLjQzNnYtLjc5NGMwLS4zMjcuMTI1LS40ODMuMzU4LS40ODNhLjg4Ljg4IDAgMCAxIC4yOC4wNDdjLjA5My4wMy4yMzQuMDkzLjM5LjE1NmE4LjQ3IDguNDcgMCAwIDAgMS43MTMuNTQ1Yy42MjMuMTI1IDEuMjMuMTg3IDEuODUzLjE4Ny45OCAwIDEuNzQ0LS4xNyAyLjI3NC0uNTE0cy44LS44NC44LTEuNDhjMC0uNDM2LS4xNC0uNzk0LS40Mi0xLjFzLS44LS41Ni0xLjU3My0uOGwtMi4yNTgtLjdjLTEuMTM3LS4zNTgtMS45NzgtLjg4OC0yLjQ5Mi0xLjU5LS41MTQtLjY4NS0uNzgtMS40NDgtLjc4LTIuMjU4IDAtLjY1NC4xNC0xLjIzLjQyLTEuNzNzLjY1NC0uOTM1IDEuMTItMS4yNzdjLjQ2Ny0uMzU4Ljk5Ny0uNjIzIDEuNjItLjhzMS4yNzctLjI2NSAxLjk2Mi0uMjY1YTcuODIgNy44MiAwIDAgMSAxLjA0NC4wNjJsMS4wMTIuMTcuODg4LjI1Yy4yOC4wOTMuNDk4LjE4Ny42NTQuMjguMjE4LjEyNS4zNzQuMjUuNDY3LjM5LjA5My4xMjUuMTQuMjk2LjE0LjUxNHYuNzMyYzAgLjMyNy0uMTI1LjQ5OC0uMzU4LjQ5OC0uMTI1IDAtLjMyNy0uMDYyLS41OTItLjE4Ny0uODg4LS40MDUtMS44ODUtLjYwNy0zLS42MDctLjg4OCAwLTEuNTkuMTQtMi4wNy40MzZzLS43MzIuNzQ4LS43MzIgMS4zODZhMS40NyAxLjQ3IDAgMCAwIC40NjcgMS4xMDZjLjMxMi4yOTYuODg4LjU5MiAxLjcxMy44NTdsMi4yMTIuN2MxLjEyLjM1OCAxLjkzLjg1NyAyLjQxNCAxLjQ5NXMuNzE2IDEuMzcuNzE2IDIuMThjMCAuNjctLjE0IDEuMjc3LS40MDUgMS44MDctLjI4LjUzLS42NTQuOTk3LTEuMTM3IDEuMzctLjQ4My4zOS0xLjA2LjY3LTEuNzMuODcyLS43LjIxOC0xLjQzMy4zMjctMi4yMjcuMzI3eiIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTQ2LjQ0MiAzOS4yMjZDNDEuMzE4IDQzIDMzLjg3MyA0NS4wMiAyNy40NzIgNDUuMDJjLTguOTcgMC0xNy4wNTUtMy4zMTctMjMuMTYtOC44My0uNDgzLS40MzYtLjA0Ny0xLjAyOC41My0uNjg1IDYuNjA0IDMuODMgMTQuNzUgNi4xNTIgMjMuMTc2IDYuMTUyIDUuNjg1IDAgMTEuOTMtMS4xODQgMTcuNjc4LTMuNjEzLjg1Ny0uNCAxLjYuNTYuNzQ4IDEuMTg0em0yLjEzNC0yLjQzYy0uNjU0LS44NC00LjMzLS40MDUtNS45OTYtLjIwMi0uNDk4LjA2Mi0uNTc2LS4zNzQtLjEyNS0uNyAyLjkyOC0yLjA1NiA3Ljc0LTEuNDY0IDguMzAyLS43OC41Ni43LS4xNTYgNS41MTQtMi44OTcgNy44Mi0uNDIuMzU4LS44MjUuMTctLjY0LS4yOTYuNjIzLTEuNTQyIDItNS4wMTUgMS4zNTUtNS44NHoiLz48L3N2Zz4=" alt="aws logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 1200px; top: 210px; transition-delay: 0ms;">
+                                <figure class="bubble" style="background-color: rgb(36, 35, 35);"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNNDIuMzcgMzUuMjc2Yy0uNTQgMS4yMjMtMS4xNzYgMi4zNDgtMS45MTUgMy4zODMtMS4wMDcgMS40MS0xLjgzIDIuMzg3LTIuNDY3IDIuOTMtLjk4NS45LTIuMDQgMS4zNDYtMy4xNyAxLjM3Mi0uODEgMC0xLjgtLjIyNy0yLjkyOC0uNjg3cy0yLjE5My0uNjg1LTMuMTUzLS42ODVjLTEuMDA3IDAtMi4wODcuMjI3LTMuMjQyLjY4NXMtMi4wOS43LTIuOC43MjRjLTEuMDg0LjA0NS0yLjE2NC0uNDIzLTMuMjQyLTEuNDEtLjY4OC0uNi0xLjU1LTEuNi0yLjU4LTMuMDMzLTEuMTA2LTEuNTMtMi4wMTYtMy4zMDMtMi43MjgtNS4zMjUtLjc2My0yLjE4NC0xLjE0Ni00LjMtMS4xNDYtNi4zNDcgMC0yLjM0Ni41MTYtNC4zNyAxLjU1LTYuMDY0LjgxMi0xLjM2MiAxLjg5Mi0yLjQzNiAzLjI0NC0zLjIyNGE4Ljg0IDguODQgMCAwIDEgNC4zODUtMS4yMTZjLjg2IDAgMS45OS4yNjIgMy4zOTIuNzc2czIuMjk3Ljc3OCAyLjcuNzc4Yy4yOTQgMCAxLjI5Mi0uMzA2IDIuOTgzLS45MTYgMS42LS41NjYgMi45NS0uOCA0LjA1NS0uNzA4IDIuOTk2LjIzOCA1LjI0OCAxLjM5OCA2Ljc0NSAzLjUtMi42OCAxLjU5Ni00LjAwNiAzLjgzLTMuOTggNi42OTguMDI0IDIuMjMzLjg1IDQuMDkyIDIuNDcgNS41NjcuNzM0LjY4NSAxLjU1NCAxLjIxNCAyLjQ2NyAxLjZsLS42MyAxLjYyMnpNMzUuNSA4LjdjMCAxLjc1LS42NSAzLjM4NS0xLjk0OCA0Ljg5Ny0xLjU2NSAxLjc5OC0zLjQ2IDIuODM4LTUuNTEyIDIuNjc0LS4wMjYtLjItLjA0LS40My0uMDQtLjY2MyAwLTEuNjguNzQ0LTMuNDggMi4wNjYtNC45NS42Ni0uNzQ0IDEuNS0xLjM2NCAyLjUxNy0xLjg1NyAxLjAxNi0uNDg2IDEuOTc2LS43NTUgMi44OC0uODAyYTYuMjUgNi4yNSAwIDAgMSAuMDM3LjdoMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="apple logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 65px; top: 320px; transition-delay: 240ms;">
+                                <figure class="bubble" style="background-color: rgb(255, 209, 1);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Ik00My4yNzYgMTguMjk3TDMwLjYyIDExLjE2NGMtLjY2Ni0uMzc1LTEuNS0uMTQtMS44ODYuNTI2LS4xMTcuMjA3LS4xNzguNDQyLS4xNzguNjh2MzAuOTdjMCAuNzY1LjYyIDEuMzg1IDEuMzg1IDEuMzg1YTEuMzkgMS4zOSAwIDAgMCAuNjg4LS4xODNsMy40LTEuOTQ3Yy40My0uMjQ3LjY5Ny0uNzA1LjY5Ny0xLjIwMnYtNi43NjdsMi41NyAxLjQ2Yy42NjUuMzc4IDEuNS4xNDUgMS44ODgtLjUyLjEyLS4yMTMuMTgzLS40NTMuMTgtLjY5OGwtLjAzNy0zLjY2M2MtLjAwNS0uNS0uMjY4LS45NC0uNjkzLTEuMTg2bC0zLjktMi4yNTR2LTYuNWw3LjE3NyA0LjE2Yy42NjIuMzg0IDEuNS4xNTggMS44OTItLjUwMy4xMjItLjIuMTg3LS40NS4xODctLjY5NHYtNC43MzVjMC0uNS0uMjctLjk2LS43MDUtMS4yMDZ6bS0zMS44MiAwbDEyLjY1Ny03LjEzNGMuNjY2LS4zNzUgMS41LS4xNCAxLjg4Ni41MjYuMTE3LjIwNy4xNzguNDQyLjE3OC42OHYzMC45N2MwIC43NjUtLjYyIDEuMzg1LTEuMzg1IDEuMzg1YTEuMzkgMS4zOSAwIDAgMS0uNjg4LS4xODNsLTMuNC0xLjk0N2MtLjQzLS4yNDctLjY5Ny0uNzA1LS42OTctMS4yMDJWMjEuMjc1bC03LjE3NyA0LjE2Yy0uNjYyLjM4NC0xLjUuMTU4LTEuODkyLS41MDMtLjEyMi0uMi0uMTg3LS40NS0uMTg3LS42OTR2LTQuNzM1YzAtLjUuMjctLjk2LjcwNS0xLjIwNnoiLz48L3N2Zz4=" alt="tflite logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 870px; top: 320px; transition-delay: 120ms;">
+                                <figure class="bubble" style="background-color: rgb(14, 56, 177);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNMTcgMTJoMjIuNjY3djExLjMzM0gyOC4zMzN6Ii8+PHBhdGggZD0iTTE3IDIzLjMzM2gxMS4zMzNsMTEuMzMzIDExLjMzM0gxN3oiLz48cGF0aCBkPSJNMTcgMzQuNjY3VjMzaDExLjVsLS4xNjcgMS42NjdWNDZ6Ii8+PC9zdmc+" alt="framer logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 1450px; top: 340px; transition-delay: 160ms;">
+                                <figure class="bubble" style="background-color: rgb(229, 75, 75);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNNDIuOTcyIDI4LjY2N2MwLTEuMDM3LS4wODQtMi4wOC0uMjY0LTMuMUgyOC4zMTR2NS44NzdoOC4yNDNjLS4zNDIgMS44OTUtMS40NCAzLjU3Mi0zLjA1IDQuNjM3djMuODEzaDQuOTE4YzIuODg4LTIuNjU4IDQuNTQ4LTYuNTgzIDQuNTQ4LTExLjIyNnoiLz48cGF0aCBkPSJNMjguMzE0IDQzLjU3OGM0LjExNiAwIDcuNTg3LTEuMzUgMTAuMTE2LTMuNjg0bC00LjkxOC0zLjgxM2MtMS4zNjguOTMtMy4xMzUgMS40NTgtNS4xOTMgMS40NTgtMy45OCAwLTcuMzU3LTIuNjg2LTguNTY4LTYuMjk3aC01LjA3NXYzLjkzYzIuNTkgNS4xNTMgNy44NjcgOC40MDYgMTMuNjM3IDguNDA2eiIvPjxwYXRoIGQ9Ik0xOS43NDYgMzEuMjRhOS4xNCA5LjE0IDAgMCAxIDAtNS44NDN2LTMuOTNoLTUuMDdjLTIuMTY0IDQuMzEyLTIuMTY0IDkuMzkzIDAgMTMuNzA1bDUuMDctMy45M3oiLz48cGF0aCBkPSJNMjguMzE0IDE5LjA5NWMyLjE3Ni0uMDM0IDQuMjguNzg1IDUuODU0IDIuMjg4bDQuMzU3LTQuMzU3Yy0yLjc2LTIuNTktNi40Mi00LjAxNS0xMC4yMS0zLjk3YTE1LjI2IDE1LjI2IDAgMCAwLTEzLjYzNyA4LjQxMWw1LjA3IDMuOTNjMS4yMDYtMy42MTcgNC41ODctNi4zMDMgOC41NjgtNi4zMDN6Ii8+PC9zdmc+" alt="google logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 345px; top: 380px; transition-delay: 80ms;">
+                                <figure class="bubble" style="background-color: rgb(0, 137, 214);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNMjcuNTA1IDM5LjM0NGw5LjQzMi0xLjY3LjA5LS4wMi00Ljg1Mi01Ljc3NC00Ljg1Mi01LjgwMmEzNzQxLjQ2IDM3NDEuNDYgMCAwIDEgNS4wMzgtMTMuODgyYy4wMS0uMDE2IDMuNDIgNS44NzMgOC4yNjUgMTQuMjc3TDQ5IDQxbC0zMC44NC0uMDA0IDkuMzQ0LTEuNjUyek05IDM3LjU4NGEzNTM4Ljc4IDM1MzguNzggMCAwIDEgNS4wOC04LjgyNGw1LjA4LTguODFMMzEuMDIgMTBjLjAxLS4wMDQtLjAzMi4xMDQtLjA5NS4yNEwxOC4xODMgMzcuNTg3bC00LjU5LjAwNmMtMi41MjUuMDAzLTQuNTktLjAwMS00LjU5LS4wMWgweiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" alt="azure logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 1100px; top: 480px; transition-delay: 0ms;">
+                                <figure class="bubble" style="background-color: rgb(4, 221, 178);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgc3Ryb2tlPSIjZmZmIiBmaWxsPSJub25lIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Ik0xNC4yMzggMTguMDczYy02LjY3LS41My0xMi4yNzcgNy4zNTQtOS41MiAxMy40NyAyLjY2MyA2LjYyNSAxMi43IDguNDMgMTcuNDg1IDMuMTE3IDQuNjIzLTQuNTMgNi40MS0xMS40OCAxMi4wMzYtMTUuMDYyIDUuNzU2LTMuOTI3IDE1LjAzMi0uMjIgMTYuMTIzIDYuNzY3IDEuMDk2IDYuNy02LjExIDEzLjIwNi0xMi42NSAxMS4yMjMtNC44MjItMS4xLTguMjktNS4yMDQtMTAuMjY1LTkuNTI4LTIuNDIyLTQuMTM4LTUuNTktOC41NDgtMTAuNTMtOS43MS0uODc4LS4yLTEuNzgtLjI3OC0yLjY4LS4yNzd6IiBzdHJva2Utd2lkdGg9IjQuMTQiLz48cGF0aCBzdHJva2Utd2lkdGg9IjEuNzU0IiBkPSJNMTAuMzA4IDI3LjU2Mmg4LjQyIi8+PHBhdGggZD0iTTM2LjEzMiAyNy41NjJoNy4wMThtLTMuNTY0LTMuNTI0djcuMDE4IiBzdHJva2Utd2lkdGg9IjIuMjQ2Ii8+PC9zdmc+" alt="arduino logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 625px; top: 485px; transition-delay: 200ms;">
+                                <figure class="bubble" style="background-color: rgb(134, 75, 255);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0ibm9uZSIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNNDQuODc2IDI3LjAyYy0uMTU2LjAxLS4yODMtLjA3OC0uMzU0LS4yMTdsLTUuNzc3LTEwLjQ5NmMtLjA3NC0uMTE4LS4wODgtLjI2NC0uMDM3LS4zOTIuMjEtLjU5LjAwMy0xLjI0Ni0uNTA4LTEuNjJhMS40OCAxLjQ4IDAgMCAwLTEuNzI1LS4wMTFjLS4xNS4xMTYtLjM0NS4xNTUtLjUyOC4xMDZsLTExLjM2Mi0yLjIzOGMtLjE3Ni0uMDEtLjMyMy0uMTQtLjM1OC0uMzA2LS41NTYtMS44NTUtMy4zOS0uOTkzLTIuNzgyLjg0OC4wNjQuMTYuMDM0LjM0NC0uMDc2LjQ3OEwxMi4zNSAyNS44NzhjLS4xMjIuMTcyLS4yNC4yNDYtLjQyLjE4YTEuNDUgMS40NSAwIDAgMC0xLjU2NiAxLjIyOWMtLjA2LjM3Ny4wMzcuNzYzLjI3MiAxLjA2N3MuNTg1LjUwMi45Ny41NDhhLjM5LjM5IDAgMCAxIC4zNjguMjk5TDE2LjgzIDQwLjk0Yy4wNTcuMTI1LjA2OC4yNy4wMjguNDE3LS40MTggMS4zNDIgMS4xNzUgMi40MTMgMi4yOTcgMS41NDQuMTEtLjEuMjUtLjEzLjM5Mi0uMTEzbDE0LjYyIDEuNDAyYy4xNjYtLjAwNC4zMTYuMDk3LjM3LjI1LjgzMyAxLjg3IDMuNjYuNDMgMi41ODQtMS4zMTdhLjM1LjM1IDAgMCAxLS4wMDQtLjQxMmw3LjM3OC0xMi41OGMuMDY2LS4xNS4yMi0uMjQ0LjM4Ny0uMjM1IDEuOTcuMDIyIDEuOTgyLTIuODkzLS4wMDQtMi44NjVsLS4wMDEtLjAxek0yMi4zIDE1LjY4M2wuNDEzLTEuNzUyYy4wMzQtLjE0Ny4wOC0uMjM2LjI3NS0uMjQ4LjM2NS0uMDE4LjcwNS0uMTkyLjkzLS40NzcuMDktLjE0LjI1OC0uMTc1LjQwNC0uMTJsMTEuNDIgMi4yNGMuMDMuMDA2LjA2LjAyLjE3Ny4wNjRsLTMuNTk0IDEuNTMtMTAuODM3IDQuNjM1LS4xNjYuMDY4Yy0uMTE2LjA0Ni0uMjI3LjE1My0uMzYuMDQyLS4xMjUtLjEwNC0uMDMzLS4yMTgtLjAwNy0uMzI1bDEuMzQ0LTUuNjU2em0tLjgyLS45ODJsLjA2LjA0LTEuNTM2IDYuNDZjLS4wMi4xNS0uMTM1LjI3NC0uMjgzLjMxLS41NjIuMTUzLS45NjUuNjM4LTEuMDA0IDEuMi4wMDEuMTQyLS4wNzQuMjc1LS4xOTguMzQ4bC00Ljg2OCAyLjgxM2MtLjA0LjAxNC0uMDguMDIyLS4xMjIuMDI4TDIxLjQ4IDE0Ljd6bS0zLjg0NSAyNS4ybC0uMDcuMjc4TDEyLjkgMjguOTE3YS40OC40OCAwIDAgMSAuMDc2LS41OTUgMS4wNiAxLjA2IDAgMCAwIC4yNy0uODIxLjQxLjQxIDAgMCAxIC4yNTktLjQzOWw1LjMzLTMuMDg3Yy4xLS4wNTguMTk4LS4xOTIuMzQ2LS4wNTYuMTMyLjEyMi4zMTIuMTguMjguNDM3bC0uNDggNC4wMzctMS4zNSAxMS41MDh6bTEuNjY3LjljLS4xNDQtLjE3Ni0uMzQtLjMwNC0uNTYyLS4zNjYtLjEzMi0uMDQyLS4yMi0uMDkzLS4xNzctLjIxNmwuNDE4LTMuNTguODM1LTcuMTMuNTc4LTQuOTg3Yy4wMzUtLjMzLjI4My0uMzIuNDgtLjQ0cy4yNjMuMDYuMzU0LjE0bDEyLjA5NiAxMC4zMmEuNTUuNTUgMCAwIDEtLjE0OS44NzZsLTEzLjQ4IDUuNDYzYy0uMTYuMDY1LS4yNy4wODMtLjM5Ni0uMDc4bC4wMDMtLjAwMXptMTUuNzgyIDEuODc3YS42Mi42MiAwIDAgMC0uMjY5LjIyOGMtLjE4Ny4zODUtLjUuMzM4LS44NS4zMDZsLTEzLjk5Ni0xLjM1Ni0uMDIzLS4wNjQgMi4xNzItLjg4NyAxMS4zNTctNC42MDNjLjIxMi0uMDg4LjM0Ni0uMDEuNTQ0LjA1Ni41NjYuMTk1LjU3OC42MjYuNjMgMS4wOGwuNTcgNC45MTNjLjAxNy4xNC4wMTQuMjQ2LS4xMzUuMzIzbC4wMDEuMDA0em0tLjQ4LTkuMDQ4Yy0uMDIzLjE3NS0uMTA2LjIyNS0uMjQ4LjI5YS4zNS4zNSAwIDAgMS0uNDEzLS4wODlMMjEuODI1IDIzLjQ3NWMtLjIyLS4yMzQtLjMxMi0uNTU3LS4yNDYtLjg3LjA2Mi0uMTI1LjIxNy0uMTQuMzM0LS4xOWwxMy45NzItNS45OGMuMjA0LS4xLjM2My0uMTQuNTIuMDc1YS42OC42OCAwIDAgMCAuMjkzLjE5OWMuMTM3LjA1Ni4xOTQuMTI4LjE2My4yMThsLTIuMjQzIDE2LjY5My0uMDE2LS4wMDN6bTEuNTkgOC43NGwtLjIyNy0xLjgxNC0uNDA4LTMuNDc3Yy0uMDQtLjMyLS4wNjctLjU4NC4yNzgtLjgzNC4zNzMtLjI4Mi41NTMtLjc0Ni40NjQtMS4yLS4wMTQtLjEzMi0uMDEtLjIxNi4xMS0uMjk2bDYuODQtNC41NzVjLjAzNS0uMDEuMDctLjAyLjEwNi0uMDI1TDM2LjIgNDIuMzZ6bTcuNDMtMTQuNTlhMS4wMyAxLjAzIDAgMCAwLS4xNzMuODA5Yy4wNDYuMTcyLS4wMzguMzUyLS4yLjQzbC03LjMzMiA0LjkzM2MtLjA4LjA1Ni0uMTQ3LjE1Ni0uMjgzLjA4LS4xNS0uMDgzLS4wOTUtLjIwMy0uMDgtLjNsMi4yMjYtMTYuNTMzYy4wMTctLjEyMi4wNDUtLjI0Mi4wODUtLjQ0NWwxLjMyNCAyLjM4OCA0LjQyOCA4LjA0M2MuMTQ2LjE3NC4xNS40MjYuMDA4LjYwNGgtLjAwM3oiIGZpbGw9IiNmZmYiLz48ZyBvcGFjaXR5PSIuMyI+PHBhdGggZD0iTTM2LjY4IDE2LjY5M2MtLjExNC0uMDM4LS4yMTUtLjEwMy0uMjkzLS4xOS0uMTU2LS4yMDMtLjMxNi0uMTYtLjUyLS4wNzJsLTEzLjk1NiA1LjY5Yy0uMTE2LjA0OC0uMjcyLjA1OC0uMzM0LjE4LS4wNjUuMjk3LS4wNDggMS4xLjE3MiAxLjMyMmwxMi4wODcgMTAuNTRjLjEuMTE2LjI3Mi4xNTIuNDEzLjA4NS4xNDItLjA2LjIyNy0uMTA2LjI0OC0uMjc1bDIuMzQ1LTE3LjA3OGMuMDMzLS4wOC0uMDI0LS4xNS0uMTYtLjIwM3oiIGZpbGw9IiNmZWZlZmUiLz48cGF0aCBkPSJNMzMuNzcgMzQuNjY1Yy00LjAzLTMuMjc2LTguNTA3LTcuNTU0LTEyLjU0LTEwLjgzLS4wOTMtLjA3NS0uMTctLjI1LS4zNTQtLjEzMnMtLjQ0NS4xMDYtLjQ4LjQybC0uNTc4IDQuNzUtLjgzNSA2Ljc5LS44NjggNC44MzVjLS4wNDUuMTE3LjA0NS4xNjcuMTc3LjIwNS4yMjIuMDYuNDE4LjE4LjU2Mi4zNDguMTI1LjE1NC4yMzQuMTM1LjM5Ni4wNzRMMzMuNjI1IDM1LjVhLjUzLjUzIDAgMCAwIC4yOTgtLjM4MmMuMDMtLjE2NC0uMDI2LS4zMzItLjE1LS40NTJsLS4wMDMtLjAwMXoiIGZpbGw9IiNmNGY1ZjYiLz48L2c+PC9zdmc+" alt="onnx logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 190px; top: 620px; transition-delay: 280ms;">
+                                <figure class="bubble" style="background-color: rgb(23, 195, 123);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNMjcuNzUyIDhjLTEwLjEwMiAwLTkuNDcgNC4zOC05LjQ3IDQuMzhsLjAxIDQuNTM4aDkuNjR2MS4zNjNIMTQuNDY0UzggMTcuNTQ4IDggMjcuNzRzNS42NDIgOS44MyA1LjY0MiA5LjgzaDMuMzY3di00Ljczcy0uMTgtNS42NDIgNS41NTItNS42NDJoOS41NnM1LjM3Mi4wODcgNS4zNzItNS4yVjEzLjI4UzM4LjMxIDggMjcuNzUzIDh6bS01LjMxNSAzLjA1MmExLjczIDEuNzMgMCAwIDEgMS43MzQgMS43MzRjMCAuOTYtLjc3NSAxLjczNC0xLjczNCAxLjczNHMtMS43MzQtLjc3NS0xLjczNC0xLjczNC43NzUtMS43MzQgMS43MzQtMS43MzR6bTUuNjAzIDM2LjUzMmMxMC4xMDIgMCA5LjQ3LTQuMzggOS40Ny00LjM4di00LjUzOGgtOS42NHYtMS4zNjNoMTMuNDY4czYuNDY0LjczMyA2LjQ2NC05LjQ2LTUuNjQyLTkuODMtNS42NDItOS44M2gtMy4zNjd2NC43M3MuMTggNS42NDItNS41NTIgNS42NDJoLTkuNTZzLTUuMzcyLS4wODctNS4zNzIgNS4ydjguNzI3cy0uODE2IDUuMjgyIDkuNzQgNS4yODJ6bTUuMzE1LTMuMDUyYTEuNzMgMS43MyAwIDAgMS0xLjczNC0xLjczNGMwLS45Ni43NzUtMS43MzQgMS43MzQtMS43MzRzMS43MzQuNzc1IDEuNzM0IDEuNzM0LS43NzUgMS43MzQtMS43MzQgMS43MzR6Ii8+PC9zdmc+" alt="python logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 1335px; top: 640px; transition-delay: 320ms;">
+                                <figure class="bubble" style="background-color: rgb(225, 0, 0);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNMzMuODMyIDkuMzU1Yy41Mi0uMTY0Ljk3My0uNTk4IDEuNjYtLjA1Ny41NzgtLjIyMyAxLjEzOC0uMyAxLjY0LjE1My43NzQtLjEgMS4wMjUuMTA3IDEuMjE2LjM1LjE3LS4wMDQgMS4yNy0uMTc1IDEuNzc3LjU4IDEuMjctLjE1IDEuNjcuNzQ3IDEuMjE2IDEuNTgzLjI2LjQuNTI4Ljc5OC0uMDc4IDEuNTYzLjIxNC40MjYuMDgyLjg4OC0uNDI0IDEuNDQ4LjEzMy42LS4xMyAxLjAyMi0uNiAxLjM1LjA4OC44Mi0uNzUyIDEuMjk2LTEuMDAzIDEuNDY2LS4wOTYuNDc4LS4yOTcuOTI4LTEuMjU2IDEuMTc4LS4xNTguNzEyLS43MzUuODM1LTEuMjkzLjk4NCAxLjg0NSAxLjA3MiAzLjQyNyAyLjQ4MyAzLjQxNiA1Ljk0NWgwbC4yNy40ODJjMi4xMTYgMS4yODcgNC4wMiA1LjQyMiAxLjA0MyA4Ljc4My0uMTk0IDEuMDUyLS41MiAxLjgwOC0uODEgMi42NDQtLjQzNCAzLjM3LTMuMjY4IDQuOTQ4LTQuMDE1IDUuMTM1LTEuMDk1LjgzNC0yLjI2MiAxLjYyNi0zLjg0IDIuMTgtMS40ODggMS41MzUtMy4xIDIuMTItNC43MiAyLjEyaDAtLjA3MmMtMS42Mi4wMDEtMy4yMzMtLjU4NC00LjcyLTIuMTItMS41NzgtLjU1NC0yLjc0NS0xLjM0Ni0zLjg0LTIuMTgtLjc0Ny0uMTg3LTMuNTgtMS43NjUtNC4wMTUtNS4xMzUtLjMtLjgzNi0uNjE2LTEuNTkyLS44MS0yLjY0NC0yLjk3Ni0zLjM2LTEuMDczLTcuNDk2IDEuMDQzLTguNzgzaDBsLjI3LS40ODJjLS4wMS0zLjQ2MiAxLjU3LTQuODczIDMuNDE2LTUuOTQ1LS41NTgtLjE1LTEuMTM1LS4yNzItMS4yOTMtLjk4NC0uOTYtLjI1LTEuMTYtLjctMS4yNTYtMS4xNzgtLjI1LS4xNy0xLjEtLjY0Ny0xLjAwMy0xLjQ2Ni0uNDctLjMzLS43MzItLjc1Mi0uNi0xLjM1LS41MDUtLjU2LS42MzgtMS4wMjItLjQyNC0xLjQ0OC0uNjA2LS43NjUtLjMzOC0xLjE2Mi0uMDc4LTEuNTYzLS40NTUtLjgzNi0uMDUzLTEuNzMzIDEuMjE2LTEuNTgzLjUwNS0uNzU0IDEuNjA3LS41ODIgMS43NzctLjU4LjE5LS4yNDIuNDQyLS40NSAxLjIxNi0uMzUuNS0uNDU0IDEuMDYyLS4zNzYgMS42NC0uMTUzLjIzNi0uMTg2LjQ0NC0uMjU4LjYzNy0uMjY0LjM3LS4wMS42ODIuMjEzIDEuMDIzLjMyLjgzLS4yNzIgMS4wMi4xIDEuNDMuMjUyLjkwNi0uMTkyIDEuMTgyLjIyNSAxLjYxNi42NjZoMGwuNTA1LS4wMWMxLjM2Ny44MDYgMi4wNDUgMi40NDYgMi4yODUgMy4zLjI0LS44NDMuOTItMi40ODQgMi4yODctMy4zaDBsLjUwNS4wMWMuNDM1LS40NC43LS44NTcgMS42MTYtLjY2Ni40MDgtLjE1LjU5OC0uNTIzIDEuNDMtLjI1MnptLTEuNjM4IDM0LjA1Yy0uMDA1LS44NDctMi4zNDctMS40ODUtNC4wOTItMS40MS0xLjczNS0uMDQzLTQuMzk1LjY5NS00LjM2MiAxLjY0LS4wMjguNjQ1IDIuMDg4IDIuNTA2IDQuMjQ2IDIuNDEzIDIuMDg0LjAzNiA0LjIzNy0xLjgyMiA0LjIwOC0yLjY0NHptMi4xMDYtNi45MDJjLTEuMzQ0IDEuNTc1LTIuMDkzIDQuNDQ3LTEuMTEyIDUuMzcyLjkzOC43MiAzLjQ1NS42MTggNS4zMTUtMS45NjIgMS4zNS0xLjczMy44OTgtNC42MjcuMTI3LTUuMzk1LTEuMTQ2LS44ODYtMi43OS4yNDgtNC4zMyAxLjk4NXptLTEyLjY0NS40NzVjLTEuNDI2LTEuNjU1LTMuMjgtMi42NC00LjQ3OC0xLjkxLS44MDIuNi0uOTUgMi42ODguMTkzIDQuNzMgMS42OTMgMi40MzMgNC4wNzYgMi42NzYgNS4wNTcgMi4wODUgMS4wMzctLjc3NS40Ny0zLjQwNi0uNzcyLTQuOTAzem02LjQyOC00LjI2Yy0yLjQgMC00LjM0NSAxLjc5NC00LjM0NSA0LjAwNnMxLjk0NSA0LjAwNiA0LjM0NSA0LjAwNiA0LjM0NS0xLjc5NCA0LjM0NS00LjAwNi0xLjk0NS00LjAwNi00LjM0NS00LjAwNnptLTEyLjQzNyAxLjgzYzEuNTguNzAzIDIuODctNy44Ni45MjUtNy4zNC0zLjIyNSAxLjg0Mi0yLjY2NSA1Ljk0LS45MjUgNy4zNHptMjQuMzEtLjEwN2MxLjc0LTEuNCAyLjMtNS40OTctLjkyNS03LjM0LTEuOTQ0LS41Mi0uNjU2IDguMDQuOTI1IDcuMzR6bS0xNC4zOTQtOS4xNjNjLTEuNzk3LTEuMTg0LTQuMzg2LS40MjYtNS43ODQgMS42OTRzLTEuMDczIDQuOC43MjQgNS45ODMgNC4zODYuNDI2IDUuNzg0LTEuNjk0IDEuMDczLTQuOC0uNzI0LTUuOTgzem00Ljg3LS4yMTRjLTEuNzk3IDEuMTg0LTIuMTIgMy44NjMtLjcyNCA1Ljk4M3MzLjk4NyAyLjg4IDUuNzg0IDEuNjk0IDIuMTItMy44NjMuNzI0LTUuOTgzLTMuOTg3LTIuODgtNS43ODQtMS42OTR6bTguMDMuNzI2Yy4xMTItMy42MzctMi42NzgtNS42My02LjAzMy01LjA2NC0xLjIzNi4yMDggNS45MjIgNi40NTggNi4wMzMgNS4wNjR6bS0yMS4zMzMtLjEwN2MuMSAxLjM5NCA3LjI2OC00Ljg1NiA2LjAzMy01LjA2NC0zLjM1NC0uNTY2LTYuMTQ1IDEuNDI2LTYuMDMzIDUuMDY0em0xMC44NS01LjkxMmMtMi4wMDItLjA1Mi0zLjkyMyAxLjQ4Ni0zLjkyOCAyLjM3OC0uMDA2IDEuMDg0IDEuNTgzIDIuMTk0IDMuOTQyIDIuMjIyIDIuNDEuMDE3IDMuOTQ2LS44ODggMy45NTMtMi4wMDcuMDEtMS4yNjctMi4xOS0yLjYxMi0zLjk2Ny0yLjU5M3ptLTYuNzk3LTkuNzY3Yy4yLjIzNS40NTUuNDY0LjE3NC43MzMtLjM4OC0uMjQ2LS43NzgtLjQ5LTEuNy0uNjY2LjIwNy4yMzUuNjM2LjQ3LjM3Ni43MDUtLjQ4Ny0uMTktMS4wMjUtLjMyNi0xLjYyLS40MDUuMjg1LjIzOC41MjMuNDcyLjMuNjU2LS41Mi0uMTYzLTEuMjQtLjM4Mi0xLjk0LS4xOTNoMGwuNDQ0LjQ1NGMuMDUuMDYtMS4wMzguMDQ3LTEuNzU2LjA1OC4yNjIuMzcuNTMuNzI2LjY4NSAxLjM2LS4wNy4wNzMtLjQyNy4wMzMtLjc2MiAwIC4zNDQuNzM1Ljk0LjkyIDEuMDggMS4yMzUtLjIuMTYyLS41MDIuMTItLjgyLjAxLjI0OC41MTguNzY3Ljg3MyAxLjE3NyAxLjI5My0uMTA0LjA3NS0uMjg1LjEyLS43MTQuMDY4LjM4LjQxLjgzNy43ODMgMS4zOCAxLjEyLS4wOTYuMTEzLS40MjcuMTA4LS43MzMuMTE2LjQ5Mi40OSAxLjEyNS43NDIgMS43MTggMS4wNjItLjI5Ni4yMDUtLjUwNy4xNTctLjczMy4xNTQuNDIuMzUgMS4xMzMuNTMyIDEuNzk1Ljc0My0uMTI2LjItLjI1Mi4yNTMtLjUyLjMxLjcuMzk0IDEuNzA1LjIxNCAxLjk4OC40MTUtLjA2OC4xOTgtLjI2LjMyNy0uNDkyLjQzNCAxLjEyOC4wNjcgNC4yMTUtLjA0MiA0LjgwNi0yLjQxMy0xLjE1NS0xLjI4OC0zLjI2NC0yLjgtNi44OS00LjY3IDIuODIyLjk2IDUuMzY4IDIuMjM3IDcuNSAzLjk5NSAyLjUwNS0xLjE4NC43NzgtNC4xNy0uNDQ0LTUuMzU2LS4wNjIuMzEzLS4xMzIuNTEtLjIxMi41Ny0uMzk4LS40MzMtLjcyMy0uODc3LTEuMjM1LTEuMjkzbC4wMDMuMDgyLjAxNi4xNjZjLjAxMy4xNjYgMCAuMzI3LS4yMDMuNDU2LS4yNzUtLjM3NS0uNjQ2LS43LTEuMTQtLjk5NC4yMzcuNDE2LjA0LjU0Mi0uMDg3LjcxNGgwbC0uMjUyLS4yMThhMy43IDMuNyAwIDAgMC0xLjE3Ni0uNjk5em0xMy43MDYgMGMtLjY5NC4yNTctMS4wNTIuNTktMS40MjguOTE3LS4xMjgtLjE3Mi0uMzI0LS4zLS4wODctLjcxNC0uNDkzLjI4NC0uODY0LjYyLTEuMTQuOTk0LS4yMDMtLjEzLS4yMTYtLjI5LS4yMDMtLjQ1NmwuMDE2LS4xNjYuMDAzLS4wODJjLS41MTIuNDE3LS44MzcuODYtMS4yMzUgMS4yOTMtLjA4LS4wNTgtLjE1LS4yNTYtLjIxMi0uNTctMS4yMjIgMS4xODYtMi45NSA0LjE3Mi0uNDQ0IDUuMzU2IDIuMTMtMS43NiA0LjY3Ny0zLjAzNyA3LjUtMy45OTUtMy42MjcgMS44Ny01LjczNiAzLjM4My02Ljg5IDQuNjcuNTkyIDIuMzcgMy42NzggMi40OCA0LjgwNiAyLjQxMy0uMjMtLjEwOC0uNDI0LS4yMzYtLjQ5Mi0uNDM0LjI4My0uMiAxLjI4Ny0uMDIgMS45ODgtLjQxNS0uMjctLjA1Ni0uMzk1LS4xLS41Mi0uMzEuNjYyLS4yMSAxLjM3Ni0uMzkzIDEuNzk1LS43NDNsLS4xNy4wMDZjLS4xNy4wMDUtLjM0My0uMDA3LS41NjUtLjE2bC4yMjQtLjExNy40NS0uMjNjLjM3My0uMTk1LjczNi0uNDEgMS4wNDMtLjcxNC0uMzA3LS4wMDgtLjYzNy0uMDAzLS43MzMtLjExNi41NDMtLjMzNiAxLS43IDEuMzgtMS4xMi0uNDMuMDUyLS42LjAwNy0uNzE0LS4wNjguNC0uNDIuOTMtLjc3NSAxLjE3Ny0xLjI5My0uMzIuMS0uNi4xNTItLjgyLS4wMS4xNC0uMzE1LjczNy0uNSAxLjA4LTEuMjM1LS4zMzUuMDMzLS42OS4wNzMtLjc2MiAwIC4xNTYtLjYzNS40MjMtLjk5LjY4NS0xLjM2bC0uNDA2LS4wMDRoLS4yODVsLTEuMDY1LS4wNTIuNDQ0LS40NTRjLS43LS4xOS0xLjQyLjAzLTEuOTQuMTkzLS4yMzQtLjE4NS4wMDQtLjQxOC4zLS42NTYtLjU5Ni4wOC0xLjEzNS4yMTctMS42Mi40MDUtLjE4LS4xNjMtLjAzLS4zMjUuMTQ4LS40ODhsLjEyLS4xMDguMTA4LS4xMDhjLS45Mi4xNzUtMS4zMS40Mi0xLjcuNjY2LS4yOC0uMjctLjAxNi0uNS4xNzQtLjczM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="raspberry logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 865px; top: 660px; transition-delay: 280ms;">
+                                <figure class="bubble" style="background-color: rgb(252, 60, 45);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Ik00My4yNzYgMTguMjk3TDMwLjYyIDExLjE2NGMtLjY2Ni0uMzc1LTEuNS0uMTQtMS44ODYuNTI2LS4xMTcuMjA3LS4xNzguNDQyLS4xNzguNjh2MzAuOTdjMCAuNzY1LjYyIDEuMzg1IDEuMzg1IDEuMzg1YTEuMzkgMS4zOSAwIDAgMCAuNjg4LS4xODNsMy40LTEuOTQ3Yy40My0uMjQ3LjY5Ny0uNzA1LjY5Ny0xLjIwMnYtNi43NjdsMi41NyAxLjQ2Yy42NjUuMzc4IDEuNS4xNDUgMS44ODgtLjUyLjEyLS4yMTMuMTgzLS40NTMuMTgtLjY5OGwtLjAzNy0zLjY2M2MtLjAwNS0uNS0uMjY4LS45NC0uNjkzLTEuMTg2bC0zLjktMi4yNTR2LTYuNWw3LjE3NyA0LjE2Yy42NjIuMzg0IDEuNS4xNTggMS44OTItLjUwMy4xMjItLjIuMTg3LS40NS4xODctLjY5NHYtNC43MzVjMC0uNS0uMjctLjk2LS43MDUtMS4yMDZ6bS0zMS44MiAwbDEyLjY1Ny03LjEzNGMuNjY2LS4zNzUgMS41LS4xNCAxLjg4Ni41MjYuMTE3LjIwNy4xNzguNDQyLjE3OC42OHYzMC45N2MwIC43NjUtLjYyIDEuMzg1LTEuMzg1IDEuMzg1YTEuMzkgMS4zOSAwIDAgMS0uNjg4LS4xODNsLTMuNC0xLjk0N2MtLjQzLS4yNDctLjY5Ny0uNzA1LS42OTctMS4yMDJWMjEuMjc1bC03LjE3NyA0LjE2Yy0uNjYyLjM4NC0xLjUuMTU4LTEuODkyLS41MDMtLjEyMi0uMi0uMTg3LS40NS0uMTg3LS42OTR2LTQuNzM1YzAtLjUuMjctLjk2LjcwNS0xLjIwNnoiLz48L3N2Zz4=" alt="tensorflow logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 480px; top: 730px; transition-delay: 320ms;">
+                                <figure class="bubble" style="background-color: rgb(51, 51, 51);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48ZGVmcz48ZmlsdGVyIHg9Ii02OC4yJSIgeT0iLTM0LjElIiB3aWR0aD0iMjM2LjQlIiBoZWlnaHQ9IjIzNi40JSIgPjxmZU1vcnBob2xvZ3kgcmFkaXVzPSIxMCIgaW49IlNvdXJjZUFscGhhIi8+PGZlT2Zmc2V0IGR5PSIzMCIvPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjI1Ii8+PGZlQ29sb3JNYXRyaXggdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjI1Mzg1MTYxNyAwIi8+PC9maWx0ZXI+PC9kZWZzPjxwYXRoIGQ9Ik0zNy4yNiA0MC4wNTJsLTcuMTgyLTEyLjA3IDcuMTgyLTEyLjA3IDMuNDYyIDEyLjA3LTMuNDYyIDEyLjA3em0tMTUuOTg1LTEuMTc4bC05LjAyNC04Ljk0MmgxNC4zNjVsNy4xODIgMTIuMDctMTIuNTIzLTMuMTI4em0wLTIxLjgybDEyLjQ4Ni0zLjEyOC03LjE4MiAxMi4wN0gxMi4yMTRsOS4wNi04Ljk0MnpNMzkuNjE3IDhMMjMuMyAxMi4yMzIgMjAuODcgMTYuNGwtNC44OTgtLjAzN0w0IDI3Ljk4MiAxNS45NyAzOS42bDQuODk4LS4wMzcgMi40MyA0LjE1OEwzOS42MTcgNDggNDQgMzIuMTRsLTIuNDY4LTQuMTJMNDQgMjMuODk3IDM5LjYxNyA4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" alt="unity logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                            <div class="bubble-container" style="left: 1130px; top: 840px; transition-delay: 400ms;">
+                                <figure class="bubble" style="background-color: rgb(167, 187, 195);">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NiIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48cGF0aCBkPSJNMTEuODg0IDM4Ljc4VjI0LjIyN2guMTJsNS44NDIgMTQuNTU0aDIuODNsNS44NDItMTQuNTU0aC4xMlYzOC43OGg0LjAxVjE3LjIySDI1LjQzbC02LjEgMTUuNDhoLS4xMmwtNi4xLTE1LjQ4SDcuODc1VjM4Ljc4aDQuMDF6bTM2LjI0IDB2LTMuNzM2aC05LjQwM1YxNy4yMmgtNC41VjM4Ljc4aDEzLjkwM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="coreml logo" loading="lazy" width="90" height="90">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials-container">
+                        <div class="testimonials">
+                            <a class="testimonial-container" href="https://aka.ms/AA9vh8o" target="_lobe_external" rel="noopener" style="transform: translate3d(0px, 0px, 0px);">
+                                <div class="testimonial">
+                                    <div class="testimonial-header">
+                                        <img src="https://www.lobe.ai/assets/avatars/avatar1@2x.jpg" class="testimonial-image" alt="User avatar of the Lobe testimonial" loading="lazy" width="112" height="112">
+                                        <div class="testimonial-text">As soon as I used Lobe I was completely blown away. I don’t have to spend days trying to learn machine learning. Simply label some images and boom, it really just works.</div>
+                                    </div>
+                                    <div class="testimonial-footer">
+                                        <div class="testimonial-name">Chris Cachor</div>
+                                        <div class="testimonial-company">Software Engineer</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="testimonial-container" href="https://aka.ms/AA9vh8o" target="_lobe_external" rel="noopener" style="transform: translate3d(0px, 0px, 0px);">
+                                <div class="testimonial">
+                                    <div class="testimonial-header">
+                                        <img src="https://www.lobe.ai/assets/avatars/avatar2@2x.jpg" class="testimonial-image" alt="User avatar of the Lobe testimonial" loading="lazy" width="112" height="112">
+                                        <div class="testimonial-text">We’ve been using Lobe to quickly process previously untapped sources of data so that we can improve our models of nature-dependent tourism to promote better decision-making in our oceans.</div>
+                                    </div>
+                                    <div class="testimonial-footer">
+                                        <div class="testimonial-name">Kate Longley-Wood</div>
+                                        <div class="testimonial-company">Ocean Mapper</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="testimonial-container" href="https://aka.ms/AA9vh8o" target="_lobe_external" rel="noopener" style="transform: translate3d(0px, 0px, 0px);">
+                                <div class="testimonial">
+                                    <div class="testimonial-header">
+                                        <img src="https://www.lobe.ai/assets/avatars/avatar3@2x.jpg" class="testimonial-image" alt="User avatar of the Lobe testimonial" loading="lazy" width="112" height="112">
+                                        <div class="testimonial-text">Lobe is so easy and takes so much of the complicated stuff out of machine learning. Even my kid was begging me to sit in front of the computer and categorize my bees for me.</div>
+                                    </div>
+                                    <div class="testimonial-footer">
+                                        <div class="testimonial-name">Sean Cusack</div>
+                                        <div class="testimonial-company">Beekeeper</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section section--examples">
+                    <div class="section-content">
+                        <h2 class="section-heading">Lobe <span class="section-heading--green">Examples</span></h2>
+                        <p class="section-text">One tool, endless possibilities. Discover all the things you can train your app to do with Lobe.</p>
+                    </div>
+
+                    <div class="carousels-container">
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <a class="carousel-item-container" aria-label="Link to plants example" href="/examples#plants" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Plants.jpg" class="carousel-item-image" alt="Video of the Plant Species example showing a Toyon and a Madrone with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Plant Species example showing a Toyon and a Madrone with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Plants.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Plant Species</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to hands example" href="/examples#hands" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Hand Count.jpg" class="carousel-item-image" alt="Video of the Hand Gestures example showing a human hand counting up to 5 and down to 1 with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Hand Gestures example showing a human hand counting up to 5 and down to 1 with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Hand Count.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Hand Gestures</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to burn example" href="/examples#burn" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Feel the Burn.jpg" class="carousel-item-image" alt="Video of the Personal Trainer example showing a woman doing while doing crunches with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Personal Trainer example showing a woman doing while doing crunches with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Feel the Burn.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Personal Trainer</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to laughing example" href="/examples#laughing" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Laughing.jpg" class="carousel-item-image" alt="Video of the Emotional Reactions example showing a woman smiling and then laughing with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Emotional Reactions example showing a woman smiling and then laughing with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Laughing.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Emotional Reactions</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to painting example" href="/examples#painting" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Painting with Mike.jpg" class="carousel-item-image" alt="Video of the Safety Precautions example showing a woman putting her mask on with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Safety Precautions example showing a woman putting her mask on with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Painting with Mike.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Interactive Painting</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to masks example" href="/examples#masks" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Mask Up.jpg" class="carousel-item-image" alt="Video of the Safety Precautions example showing a woman putting her mask on with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Safety Precautions example showing a woman putting her mask on with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Mask Up.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Safety Precautions</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to whales example" href="/examples#whales" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Whales.jpg" class="carousel-item-image" alt="Video of the Whale Watching example showing a whale jumping off the ocean with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Whale Watching example showing a whale jumping off the ocean with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Whales.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Whale Watching</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to bees example" href="/examples#bees" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Bees.jpg" class="carousel-item-image" alt="Video of the Beehive Health example showing a bee enter the hive with pollen, with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Beehive Health example showing a bee enter the hive with pollen, with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Bees.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Beehive Health</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <a class="carousel-item-container" aria-label="Link to sleeping example" href="/examples#sleeping" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Sleeping.jpg" class="carousel-item-image" alt="Video of the Baby Monitor example showing a kid waking up with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Baby Monitor example showing a kid waking up with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Sleeping.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Baby Monitor</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to checkout example" href="/examples#checkout" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Checkout.jpg" class="carousel-item-image" alt="Video of the Smart Checkout example showing a woman checking out her groceries with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Smart Checkout example showing a woman checking out her groceries with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Checkout.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Smart Checkout</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to wildfire example" href="/examples#wildfire" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Wildfire.jpg" class="carousel-item-image" alt="Video of the Fire Watch example showing a fire in the middle of a forest burning a tree with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Fire Watch example showing a fire in the middle of a forest burning a tree with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Wildfire.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Fire Watch</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to microscope example" href="/examples#microscope" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Microscope.jpg" class="carousel-item-image" alt="Video of the Scientific Research example showing a microscopic zygote moving around with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Scientific Research example showing a microscopic zygote moving around with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Microscope.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Scientific Research</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to wildlife example" href="/examples#wildlife" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/African Wildlife.jpg" class="carousel-item-image" alt="Video of the Wildlife Behavior example showing an elephant drinking out of a river with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Wildlife Behavior example showing an elephant drinking out of a river with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/African Wildlife.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Wildlife Behavior</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to compression example" href="/examples#compression" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Compression.jpg" class="carousel-item-image" alt="Video of the Equipment Analytics example showing a gauge moving up and down with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Equipment Analytics example showing a gauge moving up and down with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Compression.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Equipment Analytics</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to telescope example" href="/examples#telescope" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Telescope.jpg" class="carousel-item-image" alt="Video of the Telescopic Imagery example showing a nebula with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Telescopic Imagery example showing a nebula with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Telescope.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Telescopic Imagery</div>
+                                    </div>
+                                </a>
+                                <a class="carousel-item-container" aria-label="Link to deforestation example" href="/examples#deforestation" style="visibility: visible;">
+                                    <div class="carousel-item-2">
+                                        <img src="https://www.lobe.ai/assets/examples/Deforestation.jpg" class="carousel-item-image" alt="Video of the Aerial Imagery example showing a forest and the impact of deforestation with a live prediction in the bottom corner." loading="lazy">
+                                        <video class="carousel-item-image" autoplay="true" playsinline="" webkit-playsinline="true" loop="" preload="none" title="Video of the Aerial Imagery example showing a forest and the impact of deforestation with a live prediction in the bottom corner." style="visibility: visible;">
+                                            <source src="https://www.lobe.ai/assets/examples/Deforestation.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="carousel-item-title">Aerial Imagery</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="section final-call section--center">
+                <h2 class="section-heading">Train your app with Lobe</h2>
+                <button class="large-download-button">Download</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container-fluid row">
+            <div class="col-md col-sm pe-4">
+                <figure class="footer-logo"><svg width="196px" height="52px" viewBox="0 0 196 52" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><path d="M14.7318403,-3.55271368e-15 L23.7444592,-3.13837756e-15 C27.3105342,-3.7934549e-15 28.6036791,0.371302445 29.9073828,1.06853082 C31.2110865,1.76575919 32.2342408,2.78891348 32.9314692,4.09261719 C33.6286976,5.39632089 34,6.68946584 34,10.2555408 L34,23.7444592 C34,27.3105342 33.6286976,28.6036791 32.9314692,29.9073828 C32.2342408,31.2110865 31.2110865,32.2342408 29.9073828,32.9314692 C28.6036791,33.6286976 27.3105342,34 23.7444592,34 L10.2555408,34 C6.68946584,34 5.39632089,33.6286976 4.09261719,32.9314692 C2.78891348,32.2342408 1.76575919,31.2110865 1.06853082,29.9073828 C0.371302445,28.6036791 -1.02954229e-16,27.3105342 1.77192988e-16,23.7444592 L0,15.0409072 L0,15.0409072 L14.7318403,-3.55271368e-15 Z" id="footer-desktop-logo-path-1"></path><path d="M10.2555408,-3.9670498e-15 L23.7444592,-3.13837756e-15 C27.3105342,-3.7934549e-15 28.6036791,0.371302445 29.9073828,1.06853082 C31.2110865,1.76575919 32.2342408,2.78891348 32.9314692,4.09261719 C33.6286976,5.39632089 34,6.68946584 34,10.2555408 L34,19 L34,19 L19.5,34 L10.2555408,34 C6.68946584,34 5.39632089,33.6286976 4.09261719,32.9314692 C2.78891348,32.2342408 1.76575919,31.2110865 1.06853082,29.9073828 C0.371302445,28.6036791 1.60494146e-16,27.3105342 -2.76224082e-16,23.7444592 L2.76224082e-16,10.2555408 C-1.60494146e-16,6.68946584 0.371302445,5.39632089 1.06853082,4.09261719 C1.76575919,2.78891348 2.78891348,1.76575919 4.09261719,1.06853082 C5.39632089,0.371302445 6.68946584,-3.31197246e-15 10.2555408,-3.9670498e-15 Z" id="footer-desktop-logo-path-3"></path><path d="M33.999,18 L34,23.7444592 C34,27.3105342 33.6286976,28.6036791 32.9314692,29.9073828 C32.2342408,31.2110865 31.2110865,32.2342408 29.9073828,32.9314692 C28.6036791,33.6286976 27.3105342,34 23.7444592,34 L18,34 L18,28.2555408 C18,24.6894658 18.3713024,23.3963209 19.0685308,22.0926172 C19.7657592,20.7889135 20.7889135,19.7657592 22.0926172,19.0685308 C23.3963209,18.3713024 24.6894658,18 28.2555408,18 L33.999,18 Z" id="footer-desktop-logo-path-5"></path></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><path d="M9.13638752,50.1738853 L9.13638752,0.275153484 L-4.54747351e-13,0.275153484 L-4.54747351e-13,50.1738853 L9.13638752,50.1738853 Z M32.6507879,51.2983638 C43.4738931,51.2983638 51.2749625,43.5675744 51.2749625,32.1822299 C51.2749625,20.7968855 43.4738931,13.066096 32.6507879,13.066096 C21.7574028,13.066096 13.9563335,20.7968855 13.9563335,32.1822299 C13.9563335,43.5675744 21.7574028,51.2983638 32.6507879,51.2983638 Z M32.6507879,43.5675744 C26.9581157,43.5675744 23.2332808,39.1399404 23.2332808,32.1822299 C23.2332808,25.3650792 26.9581157,20.7968855 32.6507879,20.7968855 C38.2731802,20.7968855 41.9980152,25.3650792 41.9980152,32.1822299 C41.9980152,39.1399404 38.2731802,43.5675744 32.6507879,43.5675744 Z M75.8435614,51.157804 C84.979949,51.157804 91.7970997,43.7081342 91.7970997,32.1822299 C91.7970997,20.7968855 85.1205088,13.2066558 75.9138414,13.2066558 C71.2753677,13.2066558 67.6910926,14.8230936 65.0907361,18.0559692 L65.0907361,0.275153484 L55.9543486,0.275153484 L55.9543486,50.1738853 L64.458217,50.1738853 L64.458217,45.6056916 C66.9882935,49.3305265 70.7834084,51.157804 75.8435614,51.157804 Z M73.7351643,43.2161748 C68.4641715,43.2161748 64.7393366,38.9993806 64.7393366,32.1822299 C64.7393366,25.4353591 68.4641715,21.0780051 73.8054442,21.0780051 C79.1467169,21.0780051 82.5201523,25.4353591 82.5201523,32.1822299 C82.5201523,38.9291007 79.0061571,43.2161748 73.7351643,43.2161748 Z M113.976182,51.2983638 C120.090534,51.2983638 124.939847,49.4008064 130,44.2703734 L124.869567,38.6479811 C122.62061,40.5455385 120.793333,41.8105768 119.317455,42.5133758 C117.911857,43.2161748 116.225139,43.5675744 114.187022,43.5675744 C108.21323,43.5675744 104.910074,40.1238591 104.066715,34.5717466 L129.85944,34.5717466 C129.92972,33.5175481 130,32.3227897 130,30.9874715 C130,19.7426869 123.955928,13.066096 113.203103,13.066096 C102.028598,13.066096 95.1411676,21.2185649 95.1411676,32.3930696 C95.1411676,43.848694 102.379998,51.2983638 113.976182,51.2983638 Z M121.074452,28.0357156 L104.277555,28.0357156 C105.331754,23.1864022 108.21323,20.2346462 112.921983,20.2346462 C117.771297,20.2346462 120.723053,23.1864022 121.074452,28.0357156 Z" fill-opacity="0.80345826" fill="#000000" fill-rule="nonzero"></path><g transform="translate(144.000000, 0.000000)"><g transform="translate(18.000000, 18.000000)"><mask fill="white"><use xlink:href="#footer-desktop-logo-path-1"></use></mask><use fill="#F34747" fill-rule="nonzero" transform="translate(17.000000, 17.000000) rotate(-360.000000) translate(-17.000000, -17.000000) " xlink:href="#footer-desktop-logo-path-1"></use></g><g><mask fill="white"><use xlink:href="#footer-desktop-logo-path-3"></use></mask><use fill="#00DDB3" fill-rule="nonzero" transform="translate(17.000000, 17.000000) rotate(-360.000000) translate(-17.000000, -17.000000) " xlink:href="#footer-desktop-logo-path-3"></use></g><mask fill="white"><use xlink:href="#footer-desktop-logo-path-5"></use></mask><use fill="#333333" fill-rule="nonzero" xlink:href="#footer-desktop-logo-path-5"></use></g></g></g></svg></figure>
+                <div class="footer-copywrite">
+                    <div class="footer-copywrite-line">A product by Microsoft.</div>
+                    <div class="footer-copywrite-line">All rights reserved.</div>
+                    <div class="footer-copywrite-line">© Microsoft 2021</div>
+                </div>
+            </div>
+            <div class="col-md col-sm ps-4">
+                <div class="footer-column-heading">About</div>
+                <div class="footer-column-link-container">
+                    <a class="footer-column-link" title="Download" href="/tour#signup">Download</a>
+                </div>
+                <div class="footer-column-link-container">
+                    <a class="footer-column-link" title="Overview" href="/">Overview</a>
+                </div>
+                <div class="footer-column-link-container">
+                    <a class="footer-column-link" title="Examples" href="/examples">Examples</a>
+                </div>
+                <div class="footer-column-link-container">
+                    <a class="footer-column-link" title="Blog" href="/blog">Blog</a>
+                </div>
+            </div>
+            <div class="col-md col-sm"><div class="footer-column-heading">General</div><div class="footer-column-link-container"><a title="Notice" href="NOTICE.txt" target="_lobe_external" class="footer-column-link" download="">Notice</a></div><div class="footer-column-link-container"><a class="footer-column-link" title="License" href="/license">License</a></div><div class="footer-column-link-container"><a title="Press Inquiry" href="https://news.microsoft.com/microsoft-public-relations-contacts/" target="_lobe_external" class="footer-column-link">Press Inquiry</a></div><div class="footer-column-link-container"><a title="Press Images" href="https://www.lobe.ai/assets/press/lobe-press-images.zip" target="_lobe_external" class="footer-column-link" download="">Press Images</a></div></div>
+
+            <div class="col-md col-sm"><div class="footer-column-heading">Resources</div><div class="footer-column-link-container"><a title="Help" href="/docs/welcome/welcome" class="footer-column-link">Help</a></div><div class="footer-column-link-container"><a class="footer-column-link" title="Tour" href="/tour">Tour</a></div><div class="footer-column-link-container"><a title="Contact" href="mailto:lobeai@microsoft.com" class="footer-column-link">Contact</a></div><div class="footer-column-link-container"><a title="Privacy" href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_lobe_external" class="footer-column-link">Privacy</a></div></div>
+            <div class="col-md col-sm footer-social-links"><a href="https://reddit.com/r/lobe" target="_lobe_external" class="footer-social-link" aria-label="Visit the Lobe Reddit community"><svg width="27px" height="26px" viewBox="0 0 27 26" version="1.1"><title>Lobe Reddit</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-1121.000000, -112.000000)" fill="#FFFFFF"><g transform="translate(60.000000, 0.000000)"><g transform="translate(107.500000, 105.000000)"><g transform="translate(947.000000, 0.000000)"><g transform="translate(7.000000, 7.000000)"><path d="M22,12.500015 C22.0034128,13.8198808 21.6950409,15.1218955 21.0999729,16.300009 C19.6609343,19.1793322 16.7188874,20.998756 13.499985,21 C12.1801192,21.0034428 10.8781045,20.6950709 9.69999098,20.100003 L4,22 L5.89999699,16.300009 C5.30492907,15.1218955 4.99655717,13.8198808 5,12.500015 C5.00124397,9.28111262 6.82066775,6.33906566 9.69999098,4.90002706 C10.8781045,4.30495915 12.1801192,3.99658724 13.499985,4 L13.9999842,4 C18.3157868,4.2381278 21.7618722,7.68421323 22,12.0000158 L22,12.500015 L22,12.500015 Z"></path></g></g></g></g></g></g></svg></a><a href="https://twitter.com/lobe_ai" target="_lobe_external" class="footer-social-link footer-social-link--twitter" aria-label="Visit the Lobe Twitter profile"><svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-524.000000, -7107.000000)" fill="#FFFFFF" fill-rule="nonzero"><g transform="translate(143.000000, 7050.000000)"><g transform="translate(307.000000, 0.000000)"><g transform="translate(0.000000, 49.000000)"><g transform="translate(66.000000, 0.000000)"><g transform="translate(8.000000, 7.200000)"><path d="M25.7411765,10.345436 C26.9325321,9.73758177 27.8241551,8.67572361 28.2117647,7.403145 C27.2235294,8.38390865 25.1235294,8.70878661 25.1235294,8.70878661 C23.625633,6.88211914 21.0308099,6.37020781 18.9428502,7.48945119 C16.8548905,8.60869456 15.8635169,11.0429739 16.5814706,13.2877269 L16.3529412,13.2877269 C12.2830949,13.0198802 8.51568539,11.0613953 5.97647059,7.89352683 C5.97647059,7.89352683 3.01176471,11.8165814 7.45882353,14.7588724 C7.45882353,14.7588724 5.48235294,14.7588724 4.98823529,14.2684906 C4.98823529,14.2684906 4.49411765,17.2107815 8.94117647,19.1723088 C8.31338045,19.4560955 7.5925019,19.4560955 6.96470588,19.1723088 C6.96470588,21.0664086 8.95352941,22.6049816 11.4117647,22.6049816 C11.4117647,23.9596614 8.095,25.0568907 4,25.0568907 C10.4235294,29.4703272 25.7411765,28.4895635 26.7294118,11.8165814 L29.2,9.3646723 L25.7411765,10.345436 Z"></path></g></g></g></g></g></g></g></svg></a><a href="https://www.youtube.com/channel/UCYryctkBIcCszPAFg79rwAw" target="_lobe_external" class="footer-social-link" aria-label="Visit the Lobe Facebook page"><svg width="27px" height="26px" viewBox="0 0 27 26" version="1.1"><title>Lobe YouTube</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-1233.000000, -112.000000)" fill="#FFFFFF" fill-rule="nonzero"><g transform="translate(60.000000, 0.000000)"><g transform="translate(107.500000, 105.000000)"><g transform="translate(947.000000, 0.000000)"><g transform="translate(112.000000, 0.000000)"><g transform="translate(6.500000, 7.000000)"><path d="M13.5,5.5 C15.5067016,5.5 17.5879746,5.57457132 19.7438189,5.72371397 L20.827954,5.80451586 C22.1698207,5.91158438 23.2760796,6.89936592 23.5338217,8.22059218 C23.8446072,9.81372812 24,11.4068641 24,13 C24,14.3939966 23.8810269,15.7879932 23.6430808,17.1819898 L23.5338165,17.7794162 C23.2760729,19.1006479 22.1698092,20.0884332 20.8279369,20.1955019 C18.2837919,20.3985006 15.8411463,20.5 13.5,20.5 C11.4932984,20.5 9.41202538,20.4254287 7.25618109,20.276286 L6.17204597,20.1954841 C4.83017932,20.0884156 3.72392035,19.1006341 3.46617835,17.7794078 C3.15539278,16.1862719 3,14.5931359 3,13 C3,11.6060034 3.11897305,10.2120068 3.35691915,8.81801022 L3.46618353,8.22058378 C3.72392707,6.89935214 4.83019085,5.91156683 6.17206307,5.8044981 C8.71620808,5.60149937 11.1588537,5.5 13.5,5.5 Z M12.5,9.86851709 C11.9477153,9.86851709 11.5,10.3162323 11.5,10.8685171 L11.5,10.8685171 L11.5,15.1314829 C11.5,15.3289079 11.558438,15.5219156 11.6679497,15.6861831 C11.9743022,16.1457118 12.5951715,16.2698857 13.0547002,15.9635332 L13.0547002,15.9635332 L16.2519246,13.8320503 C16.3617768,13.7588154 16.4560398,13.6645525 16.5292747,13.5547002 C16.8356271,13.0951715 16.7114532,12.4743022 16.2519246,12.1679497 L16.2519246,12.1679497 L13.0547002,10.0364668 C12.8904327,9.92695512 12.697425,9.86851709 12.5,9.86851709 Z"></path></g></g></g></g></g></g></g></svg></a></div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
