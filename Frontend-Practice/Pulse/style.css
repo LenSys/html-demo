@@ -37,9 +37,15 @@ h2 {
 }
 
 .h3 {
-    font-size: 2.25rem;
+    font-size: 2.25rem !important;
     letter-spacing: -.5px;
     line-height: 1;
+}
+
+.h4 {
+    font-size: 1.25rem;
+    line-height: 1.15;
+    margin-bottom: 0;
 }
 
 .button {
@@ -85,6 +91,16 @@ a, a:hover {
     color: #00ad6a;
     font-weight: 700;
     text-decoration: underline;
+}
+
+.bg-green-100 {
+    background-color: #eafaf1
+}
+
+@media (min-width: 768px) {
+    .md\:bg-green-100 {
+        background-color: #eafaf1
+    }
 }
 
 
@@ -335,6 +351,52 @@ a.block-blog:hover {
 .pulse-easy-online-way-container {
     padding-top: 8rem;
     padding-bottom: 8rem;
+}
+
+
+/*******************************************************/
+/* Features                                            */
+/*******************************************************/
+
+.forecast-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.organize-intro-container {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+}
+
+.organize-features-container {
+    padding-bottom: 5rem;
+}
+
+.reports-intro-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.reports-features-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.monitor-intro-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.monitor-features-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.customize-intro-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 
