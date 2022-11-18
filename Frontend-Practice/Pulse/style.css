@@ -94,7 +94,7 @@ a, a:hover {
 }
 
 .bg-green-100 {
-    background-color: #eafaf1
+    background-color: #eafaf1;
 }
 
 @media (min-width: 768px) {
@@ -447,6 +447,182 @@ a.block-blog:hover {
     line-height: 1.3;
     margin-bottom: 0;
 }
+
+
+/*******************************************************/
+/* Pricing                                             */
+/*******************************************************/
+.pricing .pulse-marketing-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.pricing .pulse-marketing-container .pulse-marketing-quote {
+    font-size: 1.5rem;
+    color: #080c16;
+}
+
+
+.pricing .pulse-marketing-container .pulse-marketing-author {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: .75rem;
+    color: #00ad6a;
+    font-weight: 700;
+}
+
+.pricing .pricing-blocks-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.pricing .pricing-blocks-container .pricing-button {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transition: all .05s ease-in-out;
+    padding-bottom: .75rem;
+    font-size: 1.25rem;
+    background-color: #1fe374;
+    color: #062c27;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.pricing .pricing-blocks-container .block-pricing {
+    text-decoration: none;
+}
+
+.pricing .pricing-blocks-container .block-pricing li:before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 14px;
+    width: 12px;
+    height: 12px;
+    background-image: url(https://pulseapp.com/img/icons/icon-check-bullet.svg);
+    background-repeat: no-repeat;
+}
+
+.pricing .pricing-blocks-container .price-tag {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: .5rem;
+    letter-spacing: -.5px;
+    color: #83858a;
+    font-weight: 400;
+}
+
+.pricing .pricing-blocks-container .sub-heading {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: .75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: rgb(6, 44, 39);
+    margin-top: 2rem;
+}
+
+.pricing .pricing-blocks-container ul {
+    margin-bottom: 1rem;
+    letter-spacing: -.5px;
+    list-style: none;
+    color: rgb(6, 44, 39);
+    font-weight: 400;
+}
+
+.pricing .pricing-blocks-container .pricing-column-start {
+    padding: 2rem;
+    padding-top: 7rem;
+}
+
+.pricing .pricing-blocks-container .pricing-column-start h2 {
+    font-size: 1.25rem !important;
+    color: #00ad6a;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+
+.pricing .pricing-blocks-container .pricing-column-start ul {
+    margin-left: -1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+.pricing .pricing-blocks-container .pricing-column-start p {
+    font-size: 1rem;
+}
+
+.pricing .pricing-blocks-container .pricing-column-center {
+    padding: 0;
+}
+
+.pricing .pricing-blocks-container .pricing-column-center a {
+    border-color: #00ad6a !important;
+    border-radius: 8px 8px 0 0;
+}
+
+.pricing .pricing-blocks-container .pricing-column-center .block-banner {
+    border: none;
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    border-bottom: 1px solid #d6dae5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: .75rem;
+    background-color: #00ad6a;
+}
+
+.pricing .pricing-blocks-container .pricing-column-center .small-business-plan {
+    font-size: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    line-height:1;
+}
+
+.pricing .pricing-blocks-container .pricing-column-end {
+    padding: 0;
+    padding-top: 4rem;
+}
+
+.pricing .pricing-blocks-container .pricing-column-end .block-banner {
+    border-bottom: 1px solid #d6dae5;
+    padding-bottom: 1.5rem;
+    padding-top: 1.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: .875rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.3;
+    background-color: #f2f3f3;
+    color: #062c27;
+}
+
+.pricing .pricing-blocks-container .pricing-column-end .premium-plan {
+    margin-top: 4rem;
+    letter-spacing: -1.5px;
+    font-size: 2.25rem;
+    color: #00ad6a;
+    line-height: 1;
+    font-weight: 400;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+
+.pricing .faq-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
 
 
 /*******************************************************/
