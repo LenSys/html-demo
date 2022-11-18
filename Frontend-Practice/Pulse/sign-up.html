@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sign-up">
+    <header class="container-fluid bg-green-100 border-bottom">
+        <div class="header">
+            <nav class="navbar navbar-expand-lg" aria-label="Navbar">
+                <div class="container-fluid d-flex justify-content-center">
+                    <a href="index.html" class="header-logo d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+                        <img src="https://pulseapp.com/img/pulse-logo.svg" alt="Pulse Logo" aria-hidden="true">
+                    </a>
+                </div>
+            </nav>
+            <p class="title block text-center">Take control of your cash flow with the #1 cash flow software.</p>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="container position-relative overflow-hidden">
+            <section class="pb-8">
+                <div class="container py-8">
+                    <div class="page-content">
+                        <div class="signup container col-9">
+                            <form id="account-form" class="paid-plan" data-parsley-validate="true" data-parsley-ui-enabled="true" data-parsley-trigger="focusout" action="/signups" accept-charset="UTF-8" method="post" novalidate=""><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="mX02c+csy9BN2fiaXnw3VZsqi64UAcC+P3XpxjGqiKLynQV9n58uJwaRPaR+m3ZtTNnTh1YAMk+8gGnoeuw4ig==">
+                                <div class="d-flex">
+                                    <div class="signup-content col-md-6">
+                                        <div class="group form">
+                                            <div class="border block block-form pt-8 px-8 mb-8">
+                                                <input value="17" type="hidden" name="account[subscription_plan_id]" id="account_subscription_plan_id">
+                                                <div class="form-group py-1 mb-1">
+                                                    <label for="account_owner_attributes_first_name">First Name</label>
+                                                    <input required="required" data-parsley-required-message="required" type="text" name="account[owner_attributes][first_name]" id="account_owner_attributes_first_name">
+                                                </div>
+                                                <div class="form-group py-1 mb-1">
+                                                    <label for="account_owner_attributes_last_name">Last Name</label>
+                                                    <input required="required" data-parsley-required-message="required" type="text" name="account[owner_attributes][last_name]" id="account_owner_attributes_last_name">
+                                                </div>
+                                                <div class="form-group py-1 mb-1">
+                                                    <label for="account_owner_attributes_email">Email</label>
+                                                    <input type="email" required="required" data-parsley-required-message="required" data-parsley-type-message="invalid email" name="account[owner_attributes][email]" id="account_owner_attributes_email">
+                                                </div>
+                                    
+                                                <div class="form-group py-1 mb-1">
+                                                    <label for="account_account_name">Company Name</label>
+                                                    <input required="required" data-parsley-required-message="required" type="text" name="account[account_name]" id="account_account_name">
+                                                </div>
+                        
+                                    
+                                                <div class="form-group py-1 mb-1">
+                                                    <label for="account_owner_attributes_password">Create a Password</label>
+                                                    <input required="required" data-parsley-required-message="required" type="password" name="account[owner_attributes][password]" id="account_owner_attributes_password">
+                                                </div>
+                                                <div class="form-group py-1 mb-1">
+                                                    <label for="account_owner_attributes_password_confirmation">Confirm Password</label>
+                                                    <input required="required" data-parsley-equalto="#account_owner_attributes_password" data-parsley-required-message="required" data-parsley-equalto-message="doesn't match" type="password" name="account[owner_attributes][password_confirmation]" id="account_owner_attributes_password_confirmation">
+                                                </div>
+                        
+                                                <div class="pulse-subdomain block mt-12 mt-8 px-8 py-8 -mx-8">
+                                                    <h3 class="font-bold">
+                                                        <label for="account_subdomain">Your Pulse Site Address</label>
+                                                    </h3>
+                                        
+                                                    <p class="mb-2" style="font-size: 12px;">
+                                                        Every Pulse account has its own unique web address where you'll log in. Remember to bookmark it!
+                                                    </p>
+                                        
+                                                    <div class="pulse-subdomain-form-group mt-2 mb-2">
+                                                        <div class="pulse-subdomain-field--validation"></div>
+                                                        <div class="pulse-subdomain-field">
+                                                        <div class="pulse-subdomain-field--input">
+                                                            <input size="25" required="required" data-parsley-required-message="required" data-parsley-type="alphanum" data-parsley-type-message="letters and numbers only" data-parsley-pulse-subdomain="" data-parsley-errors-container=".pulse-subdomain-field--validation" data-parsley-trigger="keyup" type="text" name="account[subdomain]" id="account_subdomain">
+                                                        </div>
+                                                        <div class="pulse-subdomain-field--suffix pl-2" style="letter-spacing:1px">
+                                                            .pulseapp.com
+                                                        </div>
+                                                        </div>
+                                                        <span class="pulse-subdomain-field--note block mt-4">Letters and numbers only, no spaces.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div id="signup-sidebar" class="signup-sidebar d-none d-md-block d-lg-block col-md-6 p-8">
+                                        <div class="signup-sidebar-plan mb-8 px-4 pb-8">
+                                            <h1 class="font-bold text-3xl">
+                                                Pulse Basics
+                                            </h1>
+                                            <span class="text-xl">
+                                                Free Trial • $29/mo after
+                                            </span>
+                                        </div>
+    
+                                        <div class="signup-sidebar-middle py-8 px-4 mt-8 mb-8">
+                                            <img class="float-end testimonial-image border" src="https://signup.pulseapp.com/assets/marketing/casimir-80605d7b2690154af9c1b45ee5934fa0a533f4f5e619b752d2ef42bce39d6144.jpg" alt="Casimir Loeber">
+                                            <p class="font-bold text-base testimonial-quote position-relative">Pulse takes the fear and stress out of cash flow projection and management.”</p>
+                                            <small class="d-block testimonial-author">Casimir Loeber</small>
+                                            <small class="d-block testimonial-occupation">Base-10 Design &amp; Development Inc.</small>
+                                        </div>
+    
+                                        <div class="signup-sidebar-bottom px-4">
+                                            <h3>Need more accounts?</h3>
+                                            <p class="more-accounts-info">If you need more than one financial account, you should try our Pulse Plus plan. For $30 more per month you'll get five financial accounts and unlimited users.</p>
+                                            <a id="switch-plan-btn" class="text-lg" href="/upgrade/plus">Switch now.</a>
+                                        </div>
+    
+                                    </div>
+                                </div>
+    
+                                <div class="block billing-section-title">
+                                    <h2 class="d-inline-block">
+                                        Billing Information
+                                    </h2>
+                                    <img class="inline-block" src="https://signup.pulseapp.com/assets/marketing/lock-53b4586a4fbaafc2dad528b4145feb31331bd138a19dd36a63c730691b6a30e2.png" alt="icon of a lock" aria-hidden="true" style="margin-left: 10px; margin-top: -5px;">
+                                </div>
+    
+                                <div class="d-flex" id="billing-section">
+                                    <div class="d-block col-12 col-md-6">
+                                        <div class="border block-form group p-4 mt-4 mb-4">
+                                            <div class="form cc-form" id="payment-form">
+                                                <div class="form-group py-2 mb-2">
+                                                    <label for="cardholder-name">Name on card</label>
+                                                    <input class="form-control" id="cardholder-name" name="cardholder-name" type="text">
+                                                </div>
+                                                <div class="form-group py-2 mb-2">
+                                                    <label for="card-element">
+                                                    Credit or debit card
+                                                    </label>
+                                                    <div id="card-element" class="StripeElement StripeElement--empty"><div class="__PrivateStripeElement" style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background-color: transparent !important; position: relative !important; opacity: 1 !important;"><iframe name="__privateStripeFrame2066" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/elements-inner-card-cca7dbec30a3c4398c43bbb3c0d96b3a.html#wait=false&amp;mids[guid]=NA&amp;mids[muid]=a14accf4-b6b2-4e78-8a76-d63e8d0806bf57ddfc&amp;mids[sid]=2a0aec3d-63ae-41d0-81ca-e9f41d06d9abaf0acb&amp;style[base][fontSize]=16px&amp;style[base][lineHeight]=24px&amp;rtl=false&amp;componentName=card&amp;keyMode=live&amp;apiKey=pk_live_NiQe6L3LTbDx7t2Uy1wYaifK&amp;referrer=https%3A%2F%2Fsignup.pulseapp.com%2F&amp;controllerId=__privateStripeController2061" title="Secure card payment input frame" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; transform: translate(0px) !important; color-scheme: only light !important; height: 24px;"></iframe><input class="__PrivateStripeElement-input" aria-hidden="true" aria-label=" " autocomplete="false" maxlength="1" style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: -1px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background-color: transparent !important; pointer-events: none !important; font-size: 16px !important;"></div></div>
+                                                    <!-- Used to display form errors -->
+                                                    <label id="card-errors" role="alert"></label>
+                                                </div>
+                                            </div>
+                                            <div class="billing-section-note pt-4">
+                                                <p class="text-sm">All data and transactions are securely stored and processed using industry standards.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sidebar d-none d-md-block d-lg-block col-12 col-md-6">
+                                        <div class="billing-sidebar-top px-4 mb-6">
+                                            <h3 class="font-bold text-xl">
+                                                Cancel any time.
+                                            </h3>
+                                
+                                            <p class="sidebar-billing-info">
+                                                Your first month is free, but we ask for your credit card upfront
+                                                to prevent an interruption in service. We won't charge you until
+                                                the end of your 30-day free trial.
+                                            </p>
+    
+                                            <p class="sidebar-billing-info">
+                                                We'll email you reminders before your free trial is up, and we'll
+                                                send you invoices each month when we charge your card.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="section flex tos">
+                                    <div class="content w-full">
+                                        <p class="text-base" id="signup-confirmation">
+                                            You’re signing up for a free 30-day trial of the Standard plan. At
+                                            the end of the trial on December 18
+                                            we’ll charge you $29 a month to keep using
+                                            Pulse, and you can <a href="https://help.pulseapp.com/help/will-i-be-able-to-cancel-my-account-if-i-don-t-use-pulse">cancel any time</a>.
+                                        </p>
+    
+                                        <div class="terms-and-privacy">
+                                            <div class="checkbox">
+                                                <label for="account_agreed_terms">
+                                                    <input name="account[agreed_terms]" type="hidden" value="0"><input required="required" data-parsley-required-message="You must agree to the Terms of Use." type="checkbox" value="1" name="account[agreed_terms]" id="account_agreed_terms" data-parsley-multiple="accountagreed_terms">
+                                                        I have read and agree to Pulse's <a href="https://pulseapp.com/terms">Terms of Use</a>
+                                                </label>
+                                            </div>
+    
+                                            <div class="checkbox">
+                                                <label for="account_agreed_privacy">
+                                                    <input name="account[agreed_privacy]" type="hidden" value="0"><input required="required" data-parsley-required-message="You must agree to the Privacy Policy." type="checkbox" value="1" name="account[agreed_privacy]" id="account_agreed_privacy" data-parsley-multiple="accountagreed_privacy">
+                                                    I have read and agree to Pulse's <a href="https://pulseapp.com/privacy">Privacy Policy</a>
+                                                </label>
+                                            </div>
+    
+                                            <div class="checkbox">
+                                                <label for="account_newsletter_signup">
+                                                    <input name="account[newsletter_signup]" type="hidden" value="0"><input type="checkbox" value="1" name="account[newsletter_signup]" id="account_newsletter_signup" data-parsley-multiple="accountnewsletter_signup">
+                                                    I want to receive a <a href="https://pulse.curated.co/">monthly newsletter</a> with helpful cash flow advice
+                                                </label>
+                                            </div>
+                                        </div>
+    
+                                        <input name="coupon" type="hidden" id="account_coupon">
+    
+                                        <p class="submit">
+                                            <input type="submit" name="commit" value="Start Trial" class="button button-primary block text-xl mt-8 px-8" disable_with="Please wait">
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid copyright">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    Pulse is made by <a href="https://simplefocus.com" target="_blank" rel="noopener" class="font-normal text-gray-600 hover:text-gray-500">Simple Focus</a>. We also make <a href="https://getballpark.com" target="_blank" rel="noopener" class="font-normal text-gray-600 hover:text-gray-500">Ballpark</a>, <a href="https://sifterapp.com" target="_blank" rel="noopener" class="font-normal text-gray-600 hover:text-gray-500">Sifter</a>, and
+                    <a href="https://curated.co" target="_blank" rel="noopener" class="font-normal text-gray-600 hover:text-gray-500">Curated</a>.
+                </div>
+                <div class="col-md-6">
+                    ©2019 Pulseapp.com, Inc. All Rights Reserved | <a href="https://pulseapp.com/terms" class="font-normal text-gray-600 hover:text-gray-500">Terms of Use</a> | <a href="https://pulseapp.com/privacy" class="font-normal text-gray-600 hover:text-gray-500">Privacy Policy</a> | <a href="https://pulseapp.com/eu-privacy" class="font-normal text-gray-600 hover:text-gray-500">EU Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -151,6 +151,7 @@ a, a:hover {
 
     .container {
         max-width: 95%;
+        --bs-gutter-x: 0;
     }
 
     .header-logo {
@@ -623,6 +624,249 @@ a.block-blog:hover {
     padding-bottom: 5rem;
 }
 
+
+
+/*******************************************************/
+/* Sign-up                                             */
+/*******************************************************/
+
+.sign-up .navbar {
+    padding-left: 0;
+    padding-top:2rem;
+    padding-bottom: 2.5rem;
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        background: transparent;
+    }
+}
+
+.sign-up .navbar img {
+    width:150px;
+    height:62px;
+}
+
+.sign-up .header .title {
+    font-size: 1.125rem;
+    color: #464951;
+    letter-spacing: 1px;
+}
+
+.sign-up .page-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.sign-up #account-form .block-form {
+    background-color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+}
+
+
+.sign-up #account-form .group.form {
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.08);
+    }
+
+.sign-up #account-form .signup-content .form-group {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+
+.sign-up #account-form .form-group label {
+    font-size: 85%;
+    line-height: 21px;
+}
+
+
+.sign-up #account-form .signup-content .form-group .field_with_errors, 
+.sign-up #account-form .signup-content .form-group>input {
+    grid-column: span 2;
+}
+
+.sign-up #account-form .form-group input[type=text], 
+.sign-up #account-form .form-group input[type=password], 
+.sign-up #account-form .form-group input[type=email] {
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #e0e0e0,0 2px 4px 0 rgba(0,0,0,0.07),0 1px 1.5px 0 rgba(0,0,0,0.05);
+}
+
+.sign-up #account-form input[type=email], 
+.sign-up #account-form input[type=password], 
+.sign-up #account-form input[type=number], 
+.sign-up #account-form input[type=tel], 
+.sign-up #account-form input[type=text], 
+.sign-up #account-form select, 
+.sign-up #account-form textarea {
+    width: 100%;
+    padding: .425rem;
+    letter-spacing: -.2px;
+    border-width: 1px;
+    background-color: #fff;
+    border-color: #d6dae5;
+    border-style: solid;
+}
+
+.sign-up #account-form .pulse-subdomain {
+    background-color: #f4f4f4;
+    border-top: 1px solid #D6DAE5;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding: 2rem;
+}
+
+.sign-up #account-form h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sign-up #account-form .pulse-subdomain-field--note {
+    font-size: 0.75rem;
+}
+
+.sign-up #account-form .pulse-subdomain-field {
+    display: grid;
+    grid-template-columns: auto min-content;
+    align-items: center;
+}
+
+.sign-up #account-form .signup-sidebar {
+    padding: 2rem;
+}
+
+.sign-up #account-form .signup-sidebar-plan {
+    margin-bottom: 2rem;
+}
+
+.sign-up #account-form .signup-sidebar-plan h1 {
+    line-height: 1;
+    font-size: 2.25rem !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sign-up #account-form .signup-sidebar-plan span {
+    color: #83858A;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.sign-up #account-form .signup-sidebar-middle {
+    border-top: 1px solid #D6DAE5;
+    border-bottom: 1px solid #D6DAE5;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sign-up #account-form .signup-sidebar-middle .testimonial-image {
+    width: 5rem;
+    margin-left: 0.25rem;
+    margin-bottom: .25rem;
+    border-width: 1px;
+    border-radius: 100%;
+}
+
+.sign-up #account-form .signup-sidebar-middle .testimonial-quote {
+    line-height: 1.15;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.sign-up #account-form .signup-sidebar-middle .testimonial-quote::before {
+    content: '“';
+    position: absolute;
+    width: 10px;
+    text-align: right;
+    left: -10px;
+}
+
+.sign-up #account-form .signup-sidebar-middle .testimonial-author {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.sign-up #account-form .signup-sidebar-middle .testimonial-occupation {
+    color: #8B8B8B;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.sign-up #account-form .signup-sidebar-bottom h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.sign-up #account-form .signup-sidebar-bottom .more-accounts-info {
+    font-size: .875rem;
+    margin-bottom:1.25rem;
+    letter-spacing: 1px;
+}
+
+.sign-up #account-form .signup-sidebar-bottom a {
+    color: #46B3EE !important;
+    font-size: 1.125rem;
+}
+
+.sign-up #account-form .billing-section-title {
+    margin-top: 2rem;
+}
+
+
+.sign-up #account-form .billing-section-title h2 {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+}
+
+
+.sign-up #account-form #billing-section .sidebar {
+    padding: 2rem;
+}
+
+.sign-up #account-form #billing-section .sidebar h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.sign-up #account-form #billing-section .sidebar .sidebar-billing-info {
+    font-size: .875rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.sign-up #account-form #signup-confirmation {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.sign-up #account-form #signup-confirmation a {
+    color: black;
+    font-weight: 400;
+}
+
+.sign-up #account-form .terms-and-privacy {
+    font-size: 0.875rem;
+}
+
+.sign-up #account-form .tos .checkbox a {
+    color: #46B3EE !important;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.sign-up #account-form .tos .button {
+    border-radius: 10px;
+    border-width: 0;
+    background-color: #23ea76;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
 
 
 /*******************************************************/
