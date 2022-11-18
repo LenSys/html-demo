@@ -103,6 +103,17 @@ a, a:hover {
     }
 }
 
+.screen-reader, .skip-to-content {
+    overflow: hidden!important;
+    position: absolute!important;
+    width: 1px!important;
+    height: 1px!important;
+    margin: 0!important;
+    padding: 0!important;
+    border: 0!important;
+    clip: rect(1px,1px,1px,1px)!important;
+}
+
 
 /*******************************************************/
 /* Navbar                                              */
@@ -866,6 +877,40 @@ a.block-blog:hover {
     background-color: #23ea76;
     font-size: 1.25rem;
     margin-top: 2rem;
+}
+
+
+/*******************************************************/
+/* Blog                                                */
+/*******************************************************/
+
+.blog .pagination-container {
+    margin-top: 5rem;
+    margin-bottom:5rem;
+}
+
+.blog .pagination-container .pagination-box {
+    width: 1.75rem;
+    height: 1.75rem;
+    color:grey;
+    font-weight: 600;
+}
+
+.blog .pagination-container a:hover {
+    color: #00ad6a;
+}
+
+.blog .pagination-container .stroke-current {
+    stroke: currentcolor;
+}
+
+.blog .pagination-container .rotate-180 {
+    transform: rotate(180deg);
+}
+
+.blog .pagination-container .selected-page {
+    color: white;
+    background-color: #00ad6a;
 }
 
 
