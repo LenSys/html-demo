@@ -25,6 +25,20 @@ Edit css/tailwind.css:
 @tailwind utilities;
 ```
 
+Edit tailwind.config.js:
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './public/**/*.{html,js}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
 Edit package.json:
 ```javascript
 "scripts": {
