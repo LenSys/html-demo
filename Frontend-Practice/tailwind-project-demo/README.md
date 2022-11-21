@@ -1,9 +1,11 @@
 # Tailwind Project Demo
 
+```
 npm init -y 
 npm install tailwind-css postcss-cli autoprefixer
 npx tailwind init
 touch postcss.config.js
+```
 
 Edit postcss.config.js:
 ```javascript
@@ -15,8 +17,10 @@ module.exports = {
 }
 ```
 
+```
 mkdir css
 touch css/tailwind.css
+```
 
 Edit css/tailwind.css:
 ```css
@@ -46,9 +50,10 @@ Edit package.json:
 },
 ```
 
+```
 npm run build
-
 touch public/index.html
+```
 
 Edit public/index.html:
 ```html
@@ -67,7 +72,9 @@ Edit public/index.html:
 </html>
 ```
 
+```
 npm run build
+```
 
 In development use to automatically rebuild tailwind.css file:
 ```
