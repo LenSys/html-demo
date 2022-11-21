@@ -70,7 +70,9 @@ Edit public/index.html:
 npm run build
 
 In development use to automatically rebuild tailwind.css file:
+```
 npx tailwindcss -i ./css/tailwind.css -o ./public/build/tailwind.css --watch
+```
 
 -------------------------------------------------------------------------------
 
