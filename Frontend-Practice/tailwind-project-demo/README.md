@@ -7,6 +7,8 @@ npx tailwind init
 touch postcss.config.js
 ```
 
+-------------------------------------------------------------------------------
+
 Edit postcss.config.js:
 ```javascript
 module.exports = {
@@ -17,10 +19,14 @@ module.exports = {
 }
 ```
 
+-------------------------------------------------------------------------------
+
 ```
 mkdir css
 touch css/tailwind.css
 ```
+
+-------------------------------------------------------------------------------
 
 Edit css/tailwind.css:
 ```css
@@ -28,6 +34,8 @@ Edit css/tailwind.css:
 @tailwind components;
 @tailwind utilities;
 ```
+
+-------------------------------------------------------------------------------
 
 Edit tailwind.config.js:
 ```javascript
@@ -43,6 +51,8 @@ module.exports = {
 }
 ```
 
+-------------------------------------------------------------------------------
+
 Edit package.json:
 ```javascript
 "scripts": {
@@ -50,10 +60,14 @@ Edit package.json:
 },
 ```
 
+-------------------------------------------------------------------------------
+
 ```
 npm run build
 touch public/index.html
 ```
+
+-------------------------------------------------------------------------------
 
 Edit public/index.html:
 ```html
@@ -72,9 +86,13 @@ Edit public/index.html:
 </html>
 ```
 
+-------------------------------------------------------------------------------
+
 ```
 npm run build
 ```
+
+-------------------------------------------------------------------------------
 
 In development use to automatically rebuild tailwind.css file:
 ```
