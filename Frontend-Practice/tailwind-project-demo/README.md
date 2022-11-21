@@ -71,3 +71,11 @@ npm run build
 
 In development use to automatically rebuild tailwind.css file:
 npx tailwindcss -i ./css/tailwind.css -o ./public/build/tailwind.css --watch
+
+-------------------------------------------------------------------------------
+
+# Tailwind Breakpoints:
+sm ->  640px
+md ->  768px
+lg -> 1024px 
+xl -> 1280px
