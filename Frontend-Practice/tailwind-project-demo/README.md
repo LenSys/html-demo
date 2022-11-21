@@ -2,7 +2,7 @@
 
 ```
 npm init -y 
-npm install tailwind-css postcss-cli autoprefixer
+npm install tailwindcss postcss-cli autoprefixer
 npx tailwind init
 touch postcss.config.js
 ```
