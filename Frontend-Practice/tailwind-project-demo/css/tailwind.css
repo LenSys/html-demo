@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
+
+/* define custom styles before utilities, 
+   so we can overwrite our custom classes with utilities classes when necessary in our html */
+.btn {
+    @apply inline-block px-5 py-3 rounded-lg focus:outline-none uppercase tracking-wider font-semibold;
+}
+
+.btn-indigo {
+    @apply bg-indigo-500 hover:bg-indigo-400 active:bg-indigo-600 text-white;
+}
+
+.btn-gray {
+    @apply bg-gray-400 hover:bg-gray-300 active:bg-gray-500 text-gray-800;
+}
+
 @tailwind utilities;
