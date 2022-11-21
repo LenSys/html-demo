@@ -15,4 +15,8 @@
     @apply bg-gray-400 hover:bg-gray-300 active:bg-gray-500 text-gray-800;
 }
 
+.btn-blue {
+    @apply bg-brand-blue hover:bg-brand-blue-300 text-white;
+}
+
 @tailwind utilities;

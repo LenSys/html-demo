@@ -5,7 +5,7 @@
       <h3 class="text-lg font-semibold text-gray-800">{{ destination.city }}</h3>
       <p class="text-gray-600">${{ destination.averagePrice }} / night average</p>
       <div class="mt-4">
-        <a href="#" class="text-indigo-500 hover:text-indigo-400 font-semibold text-sm">Explore {{ destination.propertyCount }} properties</a>
+        <a href="#" class="text-brand-blue hover:text-brand-blue-300 font-semibold text-sm">Explore {{ destination.propertyCount }} properties</a>
       </div>
     </div>
   </div>
