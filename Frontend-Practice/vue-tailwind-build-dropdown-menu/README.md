@@ -50,3 +50,5 @@ npm serve dist
 ![Account Dropdown in Navbar](account-dropdown-navbar.png "Account Dropdown in Navbar")
 
 ![Account Dropdown in Navbar Animation](vue-tailwind-dropdown-menu-navbar.gif "Account Dropdown in Navbar Animation")
+
+![Account Dropdown in Navbar Animation with opacity](vue-tailwind-dropdown-menu-navbar-opacity.gif "Account Dropdown in Navbar Animation with opacity")
