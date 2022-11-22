@@ -43,3 +43,5 @@ npm run build
 ```sh
 npm serve dist
 ```
+
+![Account Dropdown](account-dropdown.png "Account Dropdown")
