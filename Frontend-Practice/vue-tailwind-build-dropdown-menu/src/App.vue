@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import AccountDropdown from './components/AccountDropdown'
+import AccountDropdown from './components/AccountDropdown.vue'
 export default {
   name: 'app',
   components: {
