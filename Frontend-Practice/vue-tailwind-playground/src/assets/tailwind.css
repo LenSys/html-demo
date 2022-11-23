@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+.theme-form-group {
+    @apply flex flex-col py-1 mb-1;
+}
+
+.theme-form-label {
+    @apply text-sm tracking-wide text-gray-500;
+}
+
+.theme-form-input {
+    @apply p-2 border border-gray-300 bg-gray-100 rounded;
+}
+
+@tailwind utilities;
