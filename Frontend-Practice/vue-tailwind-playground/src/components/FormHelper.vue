@@ -52,7 +52,7 @@
             <div class="py-3 px-6 flex">
                 <div class="md:w-1/2"></div>
                 <div class="md:w-1/2 mt-2 ml-12">
-                    <button type="submit" class="py-3 px-10 bg-green-700 text-white rounded">Register</button>
+                    <button type="submit" class="py-3 px-10 bg-green-700 hover:bg-green-600 text-white rounded">Register</button>
                 </div>
             </div>
         </form>
