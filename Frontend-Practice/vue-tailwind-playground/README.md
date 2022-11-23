@@ -43,3 +43,6 @@ npm run build
 ```sh
 npm serve dist
 ```
+
+### Vue.js Tailwind Playground
+![Vue.js Tailwind Playground](vue-tailwind-playground.gif "Vue.js Tailwind Playground")
