@@ -7,8 +7,8 @@
         <form action="#" method="post">
             <div class="md:flex">
                 <div class="relative hidden md:block md:w-1/2 overflow-hidden border border-solid border-gray-300">
-                    <img class="absolute z-10 h-full object-cover object-bottom opacity-80" src="https://images.unsplash.com/photo-1529686342540-1b43aec0df75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Workcation"/>
-                    <div class="absolute z-10 bg-black inset-0 opacity-20"></div>
+                    <img class="absolute h-full object-cover object-bottom opacity-80" src="https://images.unsplash.com/photo-1529686342540-1b43aec0df75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Workcation"/>
+                    <div class="absolute bg-black inset-0 opacity-20"></div>
                     <div class="relative w-3/4 mx-auto text-center text-white">
                         <h1 class="pt-10 font-bold text-3xl">Register account</h1>
                         <span class="text-xl">Try for free • 10€/mo after</span>
