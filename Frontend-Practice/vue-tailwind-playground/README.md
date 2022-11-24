@@ -46,3 +46,4 @@ npm serve dist
 
 ### Vue.js Tailwind Playground
 ![Vue.js Tailwind Playground](vue-tailwind-playground.gif "Vue.js Tailwind Playground")
+![Vue.js Tailwind Playground Modal Dialogs](vue-tailwind-playground-modal-dialogs "Vue.js Tailwind Playground Modal Dialogs")
