@@ -1,0 +1,58 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+header {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+header .logo {
+  width:2rem;
+}
+
+nav a { 
+  color: green;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.job h2 {
+  background: green;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px auto;
+  max-width: 600px;
+  cursor: pointer;
+  color: white;
+}
+
+.job h2:hover {
+  background: rgb(1, 80, 1);
+}
+
+.job a {
+  text-decoration: none;
+}
+
+button {
+  margin: 0 5px 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: green;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(1, 80, 1); 
+}
