@@ -48,6 +48,6 @@ function videoDetails(video) {
 }
 
 loginUser('demouser@gmail.com', "123456")
-    .then(user => getUserVideos(user.email))
+    .then(user => getUserVideos(user.userEmail))
     .then(videos => videoDetails(videos[0]))
     .then(detail => console.log(detail));
