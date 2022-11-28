@@ -51,3 +51,15 @@ loginUser('demouser@gmail.com', "123456")
     .then(user => getUserVideos(user.userEmail))
     .then(videos => videoDetails(videos[0]))
     .then(detail => console.log(detail));
+
+
+// alternative way to call async functions with async + await:
+async function displayUser() {
+    const loggedinUser = await loginUser('demouser@gmail.com', "123456");
+    const videos = await getUserVideos(loggedinUser.userEmail);
+    const detail = await videoDetails(videos[0]);
+
+    console.log(loggedinUser, videos, detail);
+}
+
+displayUser();
