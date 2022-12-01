@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grid Practice</title>
     <style>
+      body {
+        padding-bottom: 500px;
+      }
+
       .div-grid-1 {
         display: grid;
         grid-template-columns: 100px 100px;
@@ -29,12 +33,24 @@
         grid-template-columns: 100px 1fr 2fr;
       }
 
+      .div-grid-5 {
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+      }
+
       .div-1 {
         background-color: lightblue;
       }
 
       .div-2 {
         background-color: lightpink;
+      }
+
+      .height-200 {
+        height: 200px;
       }
     </style>
   </head>
@@ -65,6 +81,15 @@
       <div class="div-1">100px</div>
       <div class="div-2">1fr</div>
       <div class="div-1">2fr</div>
+    </div>
+
+    <div class="div-grid-5">
+      <div class="div-1 height-200">1fr</div>
+      <div class="div-2 height-200">1fr</div>
+      <div class="div-1 height-200">1fr</div>
+      <div class="div-2 height-200">1fr</div>
+      <div class="div-1 height-200">1fr</div>
+      <div class="div-2 height-200">1fr</div>
     </div>
   </body>
 </html>
