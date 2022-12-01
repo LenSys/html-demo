@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Practice</title>
+    <style>
+      body {
+        padding-bottom: 50px;
+      }
+
+      .flex-container-1 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+      }
+
+      .flex-container-2 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+      }
+
+      .flex-container-3 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+      }
+
+      .flex-container-4 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 70px;
+        border: 1px solid gray;
+        justify-content: center;
+      }
+
+      .flex-container-5 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 70px;
+        border: 1px solid gray;
+        justify-content: space-between;
+      }
+
+      .flex-container-6 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 70px;
+        border: 1px solid gray;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .div-1 {
+        background-color: lightblue;
+      }
+
+      .div-2 {
+        background-color: lightpink;
+      }
+
+      .w-100px {
+        width: 100px;
+      }
+
+      .flex-1 {
+        flex: 1;
+      }
+
+      .flex-2 {
+        flex: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container-1">
+      <div class="div-1">div 1</div>
+      <div class="div-2">
+        div 2
+        <p>Text</p>
+      </div>
+    </div>
+
+    <div class="flex-container-2">
+      <div class="div-1 w-100px">100px</div>
+      <div class="div-2 flex-1">Flex 1</div>
+    </div>
+
+    <div class="flex-container-3">
+      <div class="div-1 w-100px">100px</div>
+      <div class="div-2 flex-1">Flex 1</div>
+      <div class="div-1 flex-2">Flex 2</div>
+    </div>
+
+    <div class="flex-container-4">
+      <div class="div-1 w-100px">100px</div>
+      <div class="div-2 w-100px">100px</div>
+      <div class="div-1 w-100px">100px</div>
+    </div>
+
+    <div class="flex-container-5">
+      <div class="div-1 w-100px">100px</div>
+      <div class="div-2 w-100px">100px</div>
+      <div class="div-1 w-100px">100px</div>
+    </div>
+
+    <div class="flex-container-6">
+      <div class="div-1 w-100px">100px</div>
+      <div class="div-2 w-100px">100px</div>
+      <div class="div-1 w-100px">100px</div>
+    </div>
+  </body>
+</html>
