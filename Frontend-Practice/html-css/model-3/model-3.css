@@ -1,0 +1,18 @@
+.model-3 {
+    font-family: "Montserrat";
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.model-3 h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.model-3 .highlight {
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+}
