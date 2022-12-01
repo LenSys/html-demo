@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Textboxes Exercise</title>
+    <style>
+      .textbox-rounded {
+        font-size: 18px;
+        border-radius: 5px;
+        border: 1px solid rgb(179, 179, 179);
+        padding: 8px 12px;
+        display: block;
+      }
+
+      .textbox-search-google {
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        padding: 8px 12px;
+        display: block;
+        width: 350px;
+        margin-top: 50px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .linkedin-signup {
+        width: 310px;
+        margin-top: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .linkedin-signup > * {
+        display: block;
+      }
+
+      .linkedin-signup label {
+        color: rgb(82, 82, 82);
+        font-size: 14px;
+      }
+      .linkedin-signup input {
+        color: rgb(82, 82, 82);
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 8px;
+        width: 285px;
+        margin-top: 5px;
+      }
+
+      .linkedin-signup p {
+        font-size: 12px;
+        color: rgb(82, 82, 82);
+      }
+
+      .linkedin-signup button {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        color: white;
+        background-color: rgb(31, 154, 211);
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .tweet {
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        width: 450px;
+      }
+
+      .tweet .thumbnail {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+      }
+
+      .tweet input {
+        font-size: 16px;
+        padding: 0;
+        height: 30px;
+        margin-left: 10px;
+        width: 250px;
+      }
+
+      .tweet button {
+        background-color: rgb(63, 168, 238);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 16px;
+        padding: 5px 12px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      footer {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="textbox-rounded"
+      class="textbox-rounded"
+      placeholder="Search"
+    />
+
+    <input
+      type="text"
+      name="textbox-search-google"
+      class="textbox-search-google"
+      placeholder="Search Google or type a URL"
+    />
+
+    <div class="linkedin-signup">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+      <p>By clicking Agree &amp; Join, you agree to the Privacy Policy.</p>
+      <button>Aggree &amp; Join</button>
+    </div>
+
+    <div class="tweet">
+      <img
+        class="thumbnail"
+        src="jae-park-7GX5aICb5i4-unsplash.jpg"
+        alt="cat"
+      />
+      <input type="text" name="tweet" placeholder="What's happening?" />
+      <button>Tweet</button>
+    </div>
+
+    <footer>
+      Photo by
+      <a
+        href="https://unsplash.com/@jaehunpark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Jae Park</a
+      >
+      on
+      <a
+        href="https://unsplash.com/s/photos/cat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Unsplash</a
+      >
+    </footer>
+  </body>
+</html>
