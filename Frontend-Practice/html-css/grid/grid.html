@@ -41,6 +41,26 @@
         row-gap: 20px;
       }
 
+      .div-grid-6 {
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: 200px 75px;
+      }
+
+      .div-grid-7 {
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: 50px 1fr 75px;
+      }
+
+      .div-grid-8 {
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 10px;
+      }
+
       .div-1 {
         background-color: lightblue;
       }
@@ -90,6 +110,28 @@
       <div class="div-2 height-200">1fr</div>
       <div class="div-1 height-200">1fr</div>
       <div class="div-2 height-200">1fr</div>
+    </div>
+
+    <div class="div-grid-6">
+      <div class="div-1">200px</div>
+      <div class="div-2">75px</div>
+    </div>
+
+    <div class="div-grid-7">
+      <div class="div-1">50px</div>
+      <div class="div-2">1fr</div>
+      <div class="div-1">75px</div>
+    </div>
+
+    <div class="div-grid-8">
+      <div class="div-1">col1</div>
+      <div class="div-2">col2</div>
+      <div class="div-1">col3</div>
+      <div class="div-2">col4</div>
+      <div class="div-1">col1</div>
+      <div class="div-2">col2</div>
+      <div class="div-1">col3</div>
+      <div class="div-2">col4</div>
     </div>
   </body>
 </html>
