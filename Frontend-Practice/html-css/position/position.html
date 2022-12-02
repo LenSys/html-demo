@@ -19,6 +19,7 @@
         left: 0;
         right: 0;
         height: 50px;
+        z-index: 1;
       }
       .div-1 {
         background-color: lightblue;
@@ -29,6 +30,7 @@
         background-color: lightpink;
         height: 200px;
         width: 200px;
+        position: relative;
       }
 
       .sidebar {
@@ -40,12 +42,43 @@
         bottom: 0;
         width: 72px;
       }
+
+      .absolute-1 {
+        position: absolute;
+        background-color: red;
+        color: white;
+        right: 0;
+        top: 0;
+      }
+
+      .absolute-2 {
+        position: absolute;
+        background-color: red;
+        color: white;
+        right: 10px;
+        top: 60px;
+      }
+
+      .absolute-3 {
+        position: absolute;
+        background-color: black;
+        color: white;
+        right: 10px;
+        bottom: 60px;
+      }
     </style>
   </head>
   <body>
     <div class="header">header</div>
-    <div class="sidebar">Sidebar</div>
+    <div class="sidebar">
+      Sidebar
+      <div class="absolute-1">X</div>
+    </div>
+    <div class="absolute-2">Absolute</div>
     <div class="div-1">div 1</div>
-    <div class="div-2">div 2</div>
+    <div class="div-2">
+      div 2
+      <div class="absolute-3">5:00</div>
+    </div>
   </body>
 </html>
