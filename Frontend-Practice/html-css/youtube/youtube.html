@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Clone</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto:wght@100;200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="youtube.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="left-section">
+        <img
+          class="hamburger-menu"
+          src="./assets/icons/header/hamburger-menu.svg"
+          alt="menu"
+        />
+        <img
+          class="youtube-logo"
+          src="./assets/icons/header/youtube-logo.svg"
+          alt="Youtube Logo"
+        />
+      </div>
+      <div class="middle-section">
+        <input type="text" class="search-bar" placeholder="Search" />
+        <button class="search-button">
+          <img
+            class="search-icon"
+            src="./assets/icons/header/search.svg"
+            alt="Search"
+          />
+          <div class="tooltip">Search</div>
+        </button>
+        <button class="voice-search-button">
+          <img
+            class="voice-search-icon"
+            src="./assets/icons/header/voice-search-icon.svg"
+            alt="Voice Search"
+          />
+          <div class="tooltip">Search with your voice</div>
+        </button>
+      </div>
+      <div class="right-section">
+        <div class="upload-icon-container">
+          <img
+            class="upload-icon"
+            src="./assets/icons/header/upload.svg"
+            alt="Upload"
+          />
+          <div class="tooltip">Create</div>
+        </div>
+        <div class="youtube-apps-icon-container">
+          <img
+            class="youtube-apps-icon"
+            src="./assets/icons/header/youtube-apps.svg"
+            alt="Youtube Apps"
+          />
+          <div class="tooltip">Youtube apps</div>
+        </div>
+        <div class="notifications-icon-container">
+          <img
+            class="notifications-icon"
+            src="./assets/icons/header/notifications.svg"
+            alt="Notifications"
+          />
+          <div class="tooltip">Notifications</div>
+          <div class="notifications-count">3</div>
+        </div>
+        <img
+          class="current-user-picture"
+          src="./assets/icons/header/my-channel.jpeg"
+          alt="User Picture"
+        />
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-link">
+        <img src="./assets/icons/sidebar/home.svg" alt="Home" />
+        <div>Home</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="./assets/icons/sidebar/explore.svg" alt="Explore" />
+        <div>Explore</div>
+      </div>
+      <div class="sidebar-link">
+        <img
+          src="./assets/icons/sidebar/subscriptions.svg"
+          alt="Subscriptions"
+        />
+        <div>Subscriptions</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="./assets/icons/sidebar/originals.svg" alt="Originals" />
+        <div>Originals</div>
+      </div>
+      <div class="sidebar-link">
+        <img
+          src="./assets/icons/sidebar/youtube-music.svg"
+          alt="YouTube Music"
+        />
+        <div>YouTube Music</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="./assets/icons/sidebar/library.svg" alt="Library" />
+        <div>Library</div>
+      </div>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img
+            class="thumbnail"
+            src="./assets/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg"
+            alt="Party"
+          />
+          <div class="video-time">14:20</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img
+              class="profile-picture"
+              src="./assets/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg"
+              alt="Party"
+            />
+            <div class="tooltip">
+              <img
+                class="profile-picture"
+                src="./assets/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg"
+                alt="Party"
+              />
+              <div class="tooltip-info">
+                <p class="tooltip-info-user">Marques Brownlee</p>
+                <p class="tooltip-info-subscribers">15M subscribers</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Talking Tech and AI with Google CEO Sundar Pichai!
+            </p>
+            <p class="video-author">Marques Brownlee</p>
+            <p class="video-stats">3.4M views &#183; 6 month ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img
+            class="thumbnail"
+            src="./assets/kelsey-chance-tAH2cA_BL5g-unsplash.jpg"
+            alt="Party"
+          />
+          <div class="video-time">8:22</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img
+              class="profile-picture"
+              src="./assets/kelsey-chance-tAH2cA_BL5g-unsplash.jpg"
+              alt="Party"
+            />
+            <div class="tooltip">
+              <img
+                class="profile-picture"
+                src="./assets/kelsey-chance-tAH2cA_BL5g-unsplash.jpg"
+                alt="Party"
+              />
+              <div class="tooltip-info">
+                <p class="tooltip-info-user">Markiplier</p>
+                <p class="tooltip-info-subscribers">15M subscribers</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-info">
+            <p class="video-title">Try Not To Laugh Challenge #9</p>
+            <p class="video-author">Markiplier</p>
+            <p class="video-stats">19M views &#183; 4 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img
+            class="thumbnail"
+            src="./assets/mourizal-zativa-lUE6vAPx9tI-unsplash.jpg"
+            alt="Party"
+          />
+          <div class="video-time">9:13</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img
+              class="profile-picture"
+              src="./assets/mourizal-zativa-lUE6vAPx9tI-unsplash.jpg"
+              alt="Party"
+            />
+            <div class="tooltip">
+              <img
+                class="profile-picture"
+                src="./assets/mourizal-zativa-lUE6vAPx9tI-unsplash.jpg"
+                alt="Party"
+              />
+              <div class="tooltip-info">
+                <p class="tooltip-info-user">SSSniperWolf</p>
+                <p class="tooltip-info-subscribers">15M subscribers</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Crazy Tik Toks Taken Moments Before DISASTER
+            </p>
+            <p class="video-author">SSSniperWolf</p>
+            <p class="video-stats">12M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img
+            class="thumbnail"
+            src="./assets/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg"
+            alt="Party"
+          />
+          <div class="video-time">22:09</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img
+              class="profile-picture"
+              src="./assets/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg"
+              alt="Party"
+            />
+            <div class="tooltip">
+              <img
+                class="profile-picture"
+                src="./assets/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg"
+                alt="Party"
+              />
+              <div class="tooltip-info">
+                <p class="tooltip-info-user">Veritasium</p>
+                <p class="tooltip-info-subscribers">15M subscribers</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              The Simplest Math Problem No One Can Solve - Collatz Conjecture
+            </p>
+            <p class="video-author">Veritasium</p>
+            <p class="video-stats">18M views &#183; 4 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img
+            class="thumbnail"
+            src="./assets/markus-spiske-iar-afB0QQw-unsplash.jpg"
+            alt="Party"
+          />
+          <div class="video-time">11:17</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img
+              class="profile-picture"
+              src="./assets/markus-spiske-iar-afB0QQw-unsplash.jpg"
+              alt="Party"
+            />
+            <div class="tooltip">
+              <img
+                class="profile-picture"
+                src="./assets/markus-spiske-iar-afB0QQw-unsplash.jpg"
+                alt="Party"
+              />
+              <div class="tooltip-info">
+                <p class="tooltip-info-user">CS Dojo</p>
+                <p class="tooltip-info-subscribers">15M subscribers</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Kadane's Algorithm to Maximum Sum Subarray Problem
+            </p>
+            <p class="video-author">CS Dojo</p>
+            <p class="video-stats">519K views &#183; 5 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img
+            class="thumbnail"
+            src="./assets/jeremy-perkins-UgNjyPkphtU-unsplash.jpg"
+            alt="Party"
+          />
+          <div class="video-time">19:59</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img
+              class="profile-picture"
+              src="./assets/jeremy-perkins-UgNjyPkphtU-unsplash.jpg"
+              alt="Party"
+            />
+            <div class="tooltip">
+              <img
+                class="profile-picture"
+                src="./assets/jeremy-perkins-UgNjyPkphtU-unsplash.jpg"
+                alt="Party"
+              />
+              <div class="tooltip-info">
+                <p class="tooltip-info-user">MrBeast</p>
+                <p class="tooltip-info-subscribers">15M subscribers</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Anything You Can Fit In The Circle I’ll Pay For
+            </p>
+            <p class="video-author">MrBeast</p>
+            <p class="video-stats">141M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <h2>Photos Attribution</h2>
+        <ul>
+          <li>
+            Photo by
+            <a
+              href="https://unsplash.com/@adityachinchure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Aditya Chinchure</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/cat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </li>
+          <li>
+            Photo by
+            <a
+              href="https://unsplash.com/@kchance8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Kelsey Chance</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/party?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </li>
+          <li>
+            Photo by
+            <a
+              href="https://unsplash.com/@mourimoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Mourizal Zativa</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/tiktok?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </li>
+          <li>
+            Photo by
+            <a
+              href="https://unsplash.com/@dancristianpaduret?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Dan Cristian Pădureț</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/math?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </li>
+          <li>
+            Photo by
+            <a
+              href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Markus Spiske</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/algorithm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </li>
+          <li>
+            Photo by
+            <a
+              href="https://unsplash.com/@jeremyperkins?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Jeremy Perkins</a
+            >
+            on
+            <a
+              href="https://unsplash.com/s/photos/circle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              >Unsplash</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
