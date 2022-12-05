@@ -1,0 +1,33 @@
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: stretch;
+    flex:1;
+    gap: 1rem;
+}
+
+nav li {
+    list-style: none;
+}
+
+
+h1 {
+    color: cornflowerblue;
+}
+
+.bg {
+    position: relative;
+    height: 200vh;
+    width: 50%;
+    background:gray;
+}
+
+.nav {
+    position: sticky;
+    width: 10%;
+    height: 10%;
+    background: orange;
+    top:10rem;
+}
